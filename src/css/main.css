@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/static/Nunito-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 320px;
+  max-height: 125px;
+  margin: 0 auto;
+  padding: 12px 8px;
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+}
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 16px;
+}
+.header__right-menu {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.header__logo {
+  order: 1;
+  padding: 0 64px 16px 0;
+}
+.header__logo-img {
+  width: 129px;
+  height: 48px;
+}
+@media (hover: hover) {
+  .header__logo-img:hover {
+    filter: invert(27%) sepia(88%) saturate(5615%) hue-rotate(316deg) brightness(90%) contrast(105%);
+    cursor: pointer;
+  }
+}
+.header__search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header__search-icon {
+  width: 22px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.header__search-img {
+  width: 22px;
+  height: 24px;
+}
+.header__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+}
+.header__link::before {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #BEDB39;
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+}
+@media (hover: hover) {
+  .header__link:hover::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+  }
+}
+@media (hover: none) {
+  .header__link:active::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+  }
+}
+.header__link-img {
+  width: 18px;
+  height: 24px;
+}
+.header__nav {
+  order: 3;
+  display: flex;
+  overflow: scroll;
+  gap: 8px;
+}
+.header__nav::-webkit-scrollbar {
+  display: none;
+}
+.header__nav-item {
+  padding: 8px 18px;
+  border: 1.2px solid #E8E8E8;
+  border-radius: 20px;
+  background: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .header__nav-item:nth-child(1):hover {
+    background: #EC95B1;
+    border: 1.2px solid #EC95B1;
+  }
+  .header__nav-item:nth-child(2):hover {
+    background: #A4CCFE;
+    border: 1.2px solid #A4CCFE;
+  }
+  .header__nav-item:nth-child(3):hover {
+    background: #BEDB39;
+    border: 1.2px solid #BEDB39;
+  }
+  .header__nav-item:nth-child(4):hover {
+    background: #FFAD20;
+    border: 1.2px solid #FFAD20;
+  }
+  .header__nav-item:nth-child(5):hover {
+    background: #ACD6DE;
+    border: 1.2px solid #ACD6DE;
+  }
+  .header__nav-item:nth-child(6):hover {
+    background: #AEDFD6;
+    border: 1.2px solid #AEDFD6;
+  }
+}
+@media (hover: none) {
+  .header__nav-item:nth-child(1):active {
+    background: #EC95B1;
+    border: 1.2px solid #EC95B1;
+  }
+  .header__nav-item:nth-child(2):active {
+    background: #A4CCFE;
+    border: 1.2px solid #A4CCFE;
+  }
+  .header__nav-item:nth-child(3):active {
+    background: #BEDB39;
+    border: 1.2px solid #BEDB39;
+  }
+  .header__nav-item:nth-child(4):active {
+    background: #FFAD20;
+    border: 1.2px solid #FFAD20;
+  }
+  .header__nav-item:nth-child(5):active {
+    background: #ACD6DE;
+    border: 1.2px solid #ACD6DE;
+  }
+  .header__nav-item:nth-child(6):active {
+    background: #AEDFD6;
+    border: 1.2px solid #AEDFD6;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    max-width: 768px;
+    max-height: 133px;
+    padding: 16px 32px;
+  }
+  .header__logo {
+    padding: 0 465px 24px 0;
+  }
+  .header__nav-item {
+    padding: 8px 18px;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    max-width: 1440px;
+    max-height: 72px;
+    justify-content: space-between;
+    padding: 16px 116px;
+  }
+  .header__logo {
+    order: 1;
+    padding: 0;
+  }
+  .header__right-menu {
+    order: 3;
+  }
+  .header__nav {
+    order: 2;
+    padding: 0;
+  }
+  .header__nav-item:nth-child(6) {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

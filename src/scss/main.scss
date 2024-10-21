@@ -1,18 +1,20 @@
 @font-face {
     font-family: 'Nunito';
-    src: url('../fonts/static/Nunito-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/static/Nunito-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/ArchivoBlack-Regular.ttf') format('truetype');
 }
 
 .header {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 320px;
+    max-width: 304px;
     max-height: 125px;
     margin: 0 auto;
-    padding: 12px 8px;
+    padding-top: 12px;
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
 
@@ -29,6 +31,7 @@
         display: flex;
         align-items: center;
         gap: 22px;
+        padding-bottom: 16px;
     }
 
     &__logo {
@@ -186,23 +189,333 @@
     }
 }
 
+.gaming-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 304px;
+    margin: 0 auto;
+    padding-top: 24px;
+    font-family: 'Nunito', sans-serif;
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 2px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: url('/image/gaming-bg-mob.svg') no-repeat;
+      z-index: -1;
+    }
+
+    &__img {
+        position: relative;
+        width: 304px;
+        height: 352px;
+      &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mask-image: url('/image/mask-gaming-1.svg');
+        mask-size: 100%;
+        mask-position: center;
+        mask-repeat: no-repeat;
+      }
+
+      &-img-stiker {
+        position: absolute;
+        top: 0px;
+        right: 8px;
+        width: 104px;
+        height: 104px;
+        rotate: -180deg;
+        transition: rotate 0.5s ease-in-out;
+
+        &:hover {
+            rotate: 0deg;
+        }
+      }
+    }
+
+    &__container {
+    }
+
+    &__info {
+
+
+      &-tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 18px;
+
+      }
+
+      &-tag {
+        margin: 0;
+        color: #94AC23;
+      }
+
+      &-tag--active {
+        width: 53px;
+        max-height: 21px;
+        margin-right: 6px;
+        padding: 8px 18px;
+        border-radius: 20px;
+        color: #1B1F21;
+        font-size: 15px;
+        background: #BEDB39;
+      }
+
+      &-title{
+        font-family: 'Archivo', sans-serif;
+        font-size: 26px;
+        padding-top: 16px;
+      }
+
+      &-text{
+        font-size: 18px;
+        color: #757778;
+        padding-top: 16px;
+      }
+
+      &-dateandtime {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+        padding-top: 16px;
+      }
+
+      &-date,
+      &-time {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 21px;
+        gap: 8px;
+        color: #757778;
+        font-size: 15px;
+      }
+      &-date::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-image: url('/image/date-icon.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &-time::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-image: url('/image/time-icon.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &-date-text,
+      &-time-text {
+        margin: 0;
+      }
+
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 56px;
+
+      &-btn {
+        width: 294px;
+        height: 59px;
+        font-size: 18px;
+        padding: 10px 50px;
+        border-radius: 30px;
+        border: 1.5px solid #1B1F21;
+        background-color: #BEDB39;
+        box-shadow: 0 0 0 5px #BEDB39;
+        white-space: nowrap;
+
+        &:hover:enabled {
+            box-shadow: 0 0 0 5px #1B1F21;
+            background-color: #1B1F21;
+            color: #FCFAF9;
+            cursor: pointer;
+        }
+
+        &:active:enabled {
+            background-color: #1B1F21;
+            color: #FCFAF9;
+        }
+
+        &:not(:enabled) {
+            opacity: 60%;
+            cursor: not-allowed;
+            background-color: #BEDB39;
+            color: inherit;
+        }
+
+        &:focus:enabled {
+            border: 1.5px solid #1B1F21;
+            box-shadow: none;
+        }
+
+        @media (hover: none) {
+            &:active {
+                background-color: #1B1F21;
+                color: #FCFAF9;
+            }
+        }
+    }
+  }
+
+
+}
+
 @media (min-width: 768px) {
     .header {
         max-width: 768px;
         max-height: 133px;
-        padding: 16px 32px;
+        padding-top: 16px;
+        justify-content: center;
+
+        &__right-menu {
+          padding-bottom: 24px;
+      }
 
         &__logo {
             padding: 0 465px 24px 0;
         }
 
         &__nav {
+            width: 704px;
+            justify-content: space-between;
 
             &-item {
                 padding: 8px 18px;
             }
         }
     }
+
+    .gaming-section {
+        width: 768px;
+        justify-content: center;
+        &__img {
+            position: relative;
+            width: 704px;
+            height: 320px;
+          &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mask-image: url('/image/mask-gaming-2.svg');
+            mask-size: 100%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+          }
+
+          &-img-stiker {
+            width: 120px;
+            height: 120px;
+          }
+        }
+
+        &__info {
+            display: flex;
+            width: 704px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+          &-tags {
+            order: 1;
+            display: flex;
+            flex-wrap: wrap;
+            width: 172px;
+            max-height: 63px;
+            font-size: 15px;
+            padding-bottom: 24px;
+          }
+
+          &-tag {
+            order: 2;
+          }
+
+          &-tag--active {
+            order: 1;
+            margin-left: 83px;
+            margin-right: 0;
+          }
+
+          &-title{
+            order: 2;
+            width: 461px;
+            padding-left: 24px;
+          }
+
+          &-text{
+            order: 4;
+            width: 461px;
+            line-height: 120%;
+            padding: 8px 0 0 24px;
+          }
+
+          &-dateandtime {
+            order: 3;
+            display: flex;
+            flex-direction: column;
+            width: 172px;
+            padding-top: 0px;
+            gap: 8px;
+          }
+
+          &-date,
+          &-time {
+            margin-left: auto;
+          }
+
+          &-date::before,
+          &-time::before {
+            display: none;
+          }
+
+          &-date::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-image: url('/image/date-icon.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          &-time::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-image: url('/image/time-icon.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+        }
+
+        &__button {
+          &-btn {
+            width: 222px;
+            height: 49px;
+          }
+        }
+      }
 
 }
 
@@ -220,6 +533,7 @@
 
         &__right-menu{
             order: 3;
+            padding-bottom: 0px;
         }
 
         &__nav {
@@ -229,5 +543,109 @@
                 display: block;
             }
         }
+    }
+    .gaming-section {
+        width: 1208px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        &__img {
+            position: relative;
+            width: 480px;
+            height: 560px;
+            margin-right: 40px;
+          &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+            mask-image: url('/image/mask-gaming-3.svg');
+            mask-size: 100%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+          }
+
+          &-img-stiker {
+            width: 180px;
+            height: 180px;
+          }
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            width: 688px;
+        }
+        &__info {
+            display: flex;
+            flex-direction: column;
+            width: 688px;
+
+          &-tags {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 227px;
+            max-height: 63px;
+            font-size: 15px;
+            padding: 0px;
+          }
+
+          &-tag {
+
+          }
+
+          &-tag--active {
+            margin: 0;
+          }
+
+          &-title{
+            width: 420px;
+            padding: 18px 0 0 0;
+          }
+
+          &-text{
+            width: 440px;
+            text-align: left;
+            line-height: 160%;
+            padding: 16px 0 0 0;
+          }
+
+          &-dateandtime {
+            order: 4;
+            display: flex;
+            flex-direction: row;
+            width: 227px;
+            padding-top: 16px;
+            gap: 8px;
+          }
+
+          &-date,
+          &-time {
+            margin: 0;
+          }
+
+          &-date::after,
+          &-time::after {
+            display: none;
+          }
+          &-date::before,
+          &-time::before {
+            display: flex;
+          }
+
+        }
+
+        &__button {
+            width: 232px;
+            margin: 0;
+            margin-top: 56px;
+
+          &-btn {
+            width: 222px;
+          }
+        }
+
     }
 }

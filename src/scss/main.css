@@ -184,8 +184,10 @@
   right: 2px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   background: url("/image/gaming-bg-mob.svg") no-repeat;
   z-index: -1;
 }
@@ -197,11 +199,16 @@
 .gaming-section__img-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  mask-image: url("/image/mask-gaming-1.svg");
-  mask-size: 100%;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-mask-image: url("/image/mask-gaming-1.svg");
+          mask-image: url("/image/mask-gaming-1.svg");
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 .gaming-section__img-img-sticker {
   position: absolute;
@@ -385,28 +392,40 @@
 .articles-section__img-picture {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-  mask-size: 100%;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 .articles-section__img-picture--first {
-  mask-image: url("/image/first-article-mask-1.svg");
+  -webkit-mask-image: url("/image/first-article-mask-1.svg");
+          mask-image: url("/image/first-article-mask-1.svg");
 }
 .articles-section__img-picture--second {
-  object-position: -50px 0px;
-  mask-image: url("/image/second-article-mask-1.svg");
+  -o-object-position: -50px 0px;
+     object-position: -50px 0px;
+  -webkit-mask-image: url("/image/second-article-mask-1.svg");
+          mask-image: url("/image/second-article-mask-1.svg");
 }
 .articles-section__img-picture--third {
-  mask-image: url("/image/third-article-mask-1.svg");
+  -webkit-mask-image: url("/image/third-article-mask-1.svg");
+          mask-image: url("/image/third-article-mask-1.svg");
 }
 .articles-section__img-picture--fourth {
-  mask-image: url("/image/fourth-article-mask-1.svg");
+  -webkit-mask-image: url("/image/fourth-article-mask-1.svg");
+          mask-image: url("/image/fourth-article-mask-1.svg");
 }
 .articles-section__img-picture--fifth {
-  object-position: left;
-  mask-image: url("/image/fifth-article-mask-1.svg");
+  -o-object-position: left;
+     object-position: left;
+  -webkit-mask-image: url("/image/fifth-article-mask-1.svg");
+          mask-image: url("/image/fifth-article-mask-1.svg");
 }
 .articles-section__img-sticker {
   position: absolute;
@@ -542,51 +561,6 @@
   margin: 0;
 }
 
-.webinars-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 304px;
-  margin: 0 auto;
-  padding-top: 24px;
-}
-.webinars-section__running-line {
-  max-width: 99vw;
-  height: 90px;
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #FFAD20;
-  transform: skewY(-4deg);
-}
-.webinars-section__running-line-container {
-  display: flex;
-  align-items: center;
-  animation: marquee 10s linear infinite;
-  transform: skewY(4deg);
-}
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-.webinars-section__running-line-content {
-  display: flex;
-  align-items: center;
-  font-size: 30px;
-  font-family: "Archivo", sans-serif;
-  margin-right: 12px;
-}
-.webinars-section__running-line-img {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
 @media (min-width: 768px) {
   .header {
     max-width: 768px;
@@ -619,11 +593,16 @@
   .gaming-section__img-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    mask-image: url("/image/mask-gaming-2.svg");
-    mask-size: 100%;
-    mask-position: center;
-    mask-repeat: no-repeat;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-mask-image: url("/image/mask-gaming-2.svg");
+            mask-image: url("/image/mask-gaming-2.svg");
+    -webkit-mask-size: 100%;
+            mask-size: 100%;
+    -webkit-mask-position: center;
+            mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
   }
   .gaming-section__img-img-sticker {
     width: 120px;
@@ -729,21 +708,28 @@
     height: 320px;
   }
   .articles-section__img-picture--first {
-    mask-image: url("/image/first-article-mask-2.svg");
+    -webkit-mask-image: url("/image/first-article-mask-2.svg");
+            mask-image: url("/image/first-article-mask-2.svg");
   }
   .articles-section__img-picture--second {
-    object-position: 0px 0px;
-    mask-image: url("/image/second-article-mask-2.svg");
+    -o-object-position: 0px 0px;
+       object-position: 0px 0px;
+    -webkit-mask-image: url("/image/second-article-mask-2.svg");
+            mask-image: url("/image/second-article-mask-2.svg");
   }
   .articles-section__img-picture--third {
-    mask-image: url("/image/third-article-mask-2.svg");
+    -webkit-mask-image: url("/image/third-article-mask-2.svg");
+            mask-image: url("/image/third-article-mask-2.svg");
   }
   .articles-section__img-picture--fourth {
-    mask-image: url("/image/fourth-article-mask-2.svg");
+    -webkit-mask-image: url("/image/fourth-article-mask-2.svg");
+            mask-image: url("/image/fourth-article-mask-2.svg");
   }
   .articles-section__img-picture--fifth {
-    object-position: left;
-    mask-image: url("/image/fifth-article-mask-2.svg");
+    -o-object-position: left;
+       object-position: left;
+    -webkit-mask-image: url("/image/fifth-article-mask-2.svg");
+            mask-image: url("/image/fifth-article-mask-2.svg");
   }
   .articles-section__img-sticker {
     width: 104px;
@@ -884,12 +870,18 @@
   .gaming-section__img-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-    mask-image: url("/image/mask-gaming-3.svg");
-    mask-size: 100%;
-    mask-position: center;
-    mask-repeat: no-repeat;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: bottom;
+       object-position: bottom;
+    -webkit-mask-image: url("/image/mask-gaming-3.svg");
+            mask-image: url("/image/mask-gaming-3.svg");
+    -webkit-mask-size: 100%;
+            mask-size: 100%;
+    -webkit-mask-position: center;
+            mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
   }
   .gaming-section__img-img-sticker {
     width: 180px;
@@ -984,21 +976,28 @@
     height: 100%;
   }
   .articles-section__img-picture--first {
-    mask-image: url("/image/first-article-mask-3.svg");
+    -webkit-mask-image: url("/image/first-article-mask-3.svg");
+            mask-image: url("/image/first-article-mask-3.svg");
   }
   .articles-section__img-picture--second {
-    object-position: 0px 0px;
-    mask-image: url("/image/second-article-mask-3.svg");
+    -o-object-position: 0px 0px;
+       object-position: 0px 0px;
+    -webkit-mask-image: url("/image/second-article-mask-3.svg");
+            mask-image: url("/image/second-article-mask-3.svg");
   }
   .articles-section__img-picture--third {
-    mask-image: url("/image/third-article-mask-3.svg");
+    -webkit-mask-image: url("/image/third-article-mask-3.svg");
+            mask-image: url("/image/third-article-mask-3.svg");
   }
   .articles-section__img-picture--fourth {
-    mask-image: url("/image/fourth-article-mask-3.svg");
+    -webkit-mask-image: url("/image/fourth-article-mask-3.svg");
+            mask-image: url("/image/fourth-article-mask-3.svg");
   }
   .articles-section__img-picture--fifth {
-    object-position: left;
-    mask-image: url("/image/fifth-article-mask-3.svg");
+    -o-object-position: left;
+       object-position: left;
+    -webkit-mask-image: url("/image/fifth-article-mask-3.svg");
+            mask-image: url("/image/fifth-article-mask-3.svg");
   }
   .articles-section__img-sticker {
     width: 180px;
@@ -1066,6 +1065,4 @@
     padding: 8px 0 0 16px;
     margin-right: 121px;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

@@ -646,6 +646,273 @@
   }
 }
 
+.webinars-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 154px;
+  padding-bottom: 90px;
+  font-family: 'Nunito', sans-serif;
+  background-color: #1B1F21;
+
+  &__running-line {
+    width: 100vw;
+    height: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #FFAD20;
+    transform: skewY(-4deg);
+
+    &--first {
+      position: absolute;
+      top: -115px;
+      margin-top: 40px;
+    }
+
+    &--second {
+      position: absolute;
+      bottom: -20px;
+      margin-top: 40px;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+      animation: marquee 40s linear infinite;
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    }
+    &-content {
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      font-family: 'Archivo', sans-serif;
+      margin-right: 12px;
+    }
+    &-img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    &--second {
+      background-color: #FE6D44;
+      transform: skewY(4deg);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #FCFAF9;
+  }
+
+  &__title {
+    font-size: 28px;
+    padding: 40px 0;
+    margin: 0;
+    margin-top: 60px;
+    text-align: center;
+    font-family: 'Archivo', sans-serif;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0px 8px;
+  }
+
+  &__card {
+    padding: 24px;
+    border-radius: 32px;
+    background-image: url('/image/card-bg-1.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+
+    &-header {
+      display: flex;
+      flex-direction: row;
+      width: 256px;
+      gap: 20px;
+    }
+
+    &-img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      mask-size: 100%;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-image: url('/image/avatar-mask.svg');
+
+      &--third {
+        background-image: url('/image/third-card-avatar.png');
+        background-size: 200%;
+        background-position: 55% 10%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &-author {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-name {
+      width: 172px;
+      margin: 0;
+      font-family: 'Archivo', sans-serif;
+      font-size: 22px;
+      line-height: 120%;
+      padding-top: 6px;
+    }
+
+    &-title {
+      width: 172px;
+      margin: 0;
+      font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-info {}
+
+    &-text {
+      width: 250px;
+      height: 116px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 24px;
+      margin: 0;
+      padding: 16px 0 32px 0;
+    }
+
+    &-footer {
+
+      &-titles {
+        display: flex;
+        flex-direction: row;
+        gap: 26px;
+      }
+
+      &-title {}
+
+      &-dateandtime {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+        padding-top: 12px;
+      }
+
+      &-date,
+      &-time {
+        display: flex;
+        flex-direction: row;
+        line-height: 140%;
+      }
+
+      &-date::before {
+        content: '';
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        background-image: url('/image/date-icon.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &-time::before {
+        content: '';
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        background-image: url('/image/time-icon.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &-date-text,
+      &-time-text {
+        margin: 0;
+        font-size: 15px;
+      }
+    }
+
+    &--first {
+      background-color: #57ACBC;
+    }
+    &--second {
+      background-color: #FE6D44;
+    }
+    &--third {
+      background-color: #EF9700;
+    }
+  }
+
+  &__button {
+
+    padding: 64px 0 74px 0;
+    margin: 0 auto;
+
+    &-btn {
+      font-size: 18px;
+      line-height: 160%;
+      padding: 17px 74px;
+      border-radius: 40px;
+      background-color: #9853F4;
+      color: #FCFAF9;
+      border: none;
+      border: 1.5px solid transparent;
+
+      &:hover:enabled {
+        background-color: #DA3369;
+        color: #FCFAF9;
+        cursor: pointer;
+      }
+
+      &:active:enabled {
+          background-color: #DA3369;
+          color: #FCFAF9;
+      }
+
+      &:not(:enabled) {
+          opacity: 60%;
+          cursor: not-allowed;
+          color: inherit;
+      }
+
+      &:focus:enabled {
+        background-color: #9853F4;
+        border: 1.5px solid #FFFFFF;
+      }
+
+      @media (hover: none) {
+          &:active {
+              background-color: #DA3369;
+          }
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
     .header {
         max-width: 768px;
@@ -786,6 +1053,7 @@
     .articles-section {
       width: 100%;
       max-width: 768px;
+      padding-bottom: 254px;
 
       &__articles {
         flex-direction: row;
@@ -953,6 +1221,101 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+
+    .webinars-section {
+      padding-bottom: 0;
+      margin-top: 0;
+
+      &__running-line {
+        &--first {
+          top: -90px;
+          margin-bottom: 55px;
+        }
+
+        &--second {
+          bottom: -50px;
+          margin-top: 55px;
+        }
+      }
+
+      &__content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 704px;
+        padding-top: 106px;
+        padding-bottom: 113px;
+      }
+
+      &__title {
+        order: 1;
+        height: 34px;
+        padding: 0 137px 0 0;
+        margin: auto 0;
+      }
+
+      &__cards {
+        order: 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin: 64px 0 0 0;
+      }
+
+      &__card {
+        width: 340px;
+        box-sizing: border-box;
+
+        &-header {
+          width: 292px;
+        }
+
+        &-name {
+          width: 208px;
+          margin: 0;
+          font-size: 26px;
+        }
+
+        &-title {
+          width: 182px;
+          margin: 0;
+        }
+
+        &-text {
+          width: 292px;
+        }
+
+        &--third {
+          width: 704px;
+          box-sizing: border-box;
+
+          .webinars-section__card-header,
+          .webinars-section__card-text {
+            width: 656px;
+          }
+          .webinars-section__card-text {
+            height: 58px;
+            padding: 16px 0 32px 0;
+          }
+
+          .webinars-section__card-name,
+          .webinars-section__card-title {
+            width: 572px;
+          }
+        }
+      }
+
+      &__button {
+        order: 1;
+        padding: 0;
+        margin: 0;
+
+        &-btn {
+          padding: 17px 62px;
+          border-radius: 40px;
+        }
+      }
+    }
 }
 
 @media (min-width: 1280px) {
@@ -1094,6 +1457,10 @@
         padding-top: 160px;
       }
 
+      .articles-section__running-line {
+        max-width: 99.1vw;
+      }
+
       &__article {
         width: 584px;
 
@@ -1219,4 +1586,128 @@
       margin-right: 121px;
     }
 
+    .webinars-section {
+      &__running-line {
+        width: 100%;
+        &--first {
+          top: -56px;
+          max-height: 120px;
+          margin: 0;
+          transform: skewY(-2deg);
+        }
+
+        &--second {
+          bottom: -55px;
+          max-height: 120px;
+          margin: 0;
+          transform: skewY(2deg);
+        }
+      }
+
+      &__content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1208px;
+        padding-top: 100px;
+        padding-bottom: 113px;
+      }
+
+      &__title {
+        order: 1;
+        height: 55px;
+        padding: 0 455px 0 0;
+        margin: auto 0;
+        font-size: 46px;
+        line-height: 120%;
+      }
+
+      &__cards {
+        order: 3;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin: 64px 0 0 0;
+      }
+
+      &__card {
+        width: 376px;
+        height: 432px;
+        padding: 32px;
+        box-sizing: border-box;
+
+        &-header {
+          width: 292px;
+          height: 93px;
+        }
+
+        &-name {
+          width: 208px;
+          margin: 0;
+          font-size: 26px;
+        }
+
+        &-title {
+          width: 182px;
+          margin: 0;
+        }
+
+        &-text {
+          width: 312px;
+          height: 144px;
+          font-size: 30px;
+          padding-top: 16px;
+          padding-bottom: 40px;
+        }
+
+        &-footer {
+        }
+
+        &--third {
+
+          .webinars-section__card-header,
+          .webinars-section__card-text {
+            width: 292px;
+          }
+          .webinars-section__card-text {
+            height: 144px;
+            padding: 16px 0 60px 0;
+          }
+
+          .webinars-section__card-name,
+          .webinars-section__card-title {
+            width: 208px;
+          }
+        }
+      }
+
+      &__button {
+        order: 1;
+        padding: 0;
+        margin: 0;
+
+        &-btn {
+        }
+      }
+    }
+}
+
+@media (min-width: 1900px) {
+  .webinars-section {
+    &__running-line {
+      width: 100%;
+      &--first {
+        top: -55px;
+        max-height: 120px;
+        margin: 0;
+        transform: skewY(-1deg);
+      }
+
+      &--second {
+        bottom: -55px;
+        max-height: 120px;
+        margin: 0;
+        transform: skewY(1deg);
+      }
+    }
+  }
 }

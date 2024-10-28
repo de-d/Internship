@@ -192,7 +192,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  background: url("/image/gaming-bg-mob.svg") no-repeat;
+  background: url("/image/gaming/gaming-bg-mob.svg") no-repeat;
   z-index: -1;
 }
 .gaming-section__img {
@@ -205,7 +205,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: bottom;
-  mask-image: url("/image/mask-gaming-1.svg");
+  mask-image: url("/image/gaming/mask-gaming-1.svg");
   mask-size: 100%;
   mask-position: center;
   mask-repeat: no-repeat;
@@ -404,21 +404,21 @@ body {
   mask-repeat: no-repeat;
 }
 .articles-section__img-picture--first {
-  mask-image: url("/image/first-article-mask-1.svg");
+  mask-image: url("/image/articles/first-article-mask-1.svg");
 }
 .articles-section__img-picture--second {
   object-position: -50px 0px;
-  mask-image: url("/image/second-article-mask-1.svg");
+  mask-image: url("/image/articles/second-article-mask-1.svg");
 }
 .articles-section__img-picture--third {
-  mask-image: url("/image/third-article-mask-1.svg");
+  mask-image: url("/image/articles/third-article-mask-1.svg");
 }
 .articles-section__img-picture--fourth {
-  mask-image: url("/image/fourth-article-mask-1.svg");
+  mask-image: url("/image/articles/fourth-article-mask-1.svg");
 }
 .articles-section__img-picture--fifth {
   object-position: left;
-  mask-image: url("/image/fifth-article-mask-1.svg");
+  mask-image: url("/image/articles/fifth-article-mask-1.svg");
 }
 .articles-section__img-picture:hover + .articles-section__img-sticker {
   rotate: 360deg;
@@ -639,7 +639,7 @@ body {
 .webinars-section__card {
   padding: 24px;
   border-radius: 32px;
-  background-image: url("/image/card-bg-1.svg");
+  background-image: url("/image/webinars/card-bg-1.svg");
   background-repeat: no-repeat;
   background-position: right top;
 }
@@ -656,10 +656,10 @@ body {
   mask-size: 100%;
   mask-position: center;
   mask-repeat: no-repeat;
-  mask-image: url("/image/avatar-mask.svg");
+  mask-image: url("/image/webinars/avatar-mask.svg");
 }
 .webinars-section__card-img--third {
-  background-image: url("/image/third-card-avatar.png");
+  background-image: url("/image/webinars/third-card-avatar.png");
   background-size: 200%;
   background-position: 55% 10%;
   background-repeat: no-repeat;
@@ -800,7 +800,7 @@ body {
   margin: 0 auto;
   margin-bottom: 100px;
   box-sizing: border-box;
-  background-image: url("/image/mob-sub-bg.svg");
+  background-image: url("/image/subscribe/mob-sub-bg.svg");
   background-repeat: no-repeat;
   color: #FCFAF9;
   font-size: 18px;
@@ -814,7 +814,7 @@ body {
   top: 701px;
   left: 152px;
   transform: translateX(-50%);
-  background-image: url("/image/mob-sub-img.svg");
+  background-image: url("/image/subscribe/mob-sub-img.svg");
   background-repeat: no-repeat;
   z-index: 11;
 }
@@ -855,10 +855,10 @@ body {
   background-repeat: no-repeat;
 }
 .subscribe-section__form-container:has(input:invalid)::after {
-  background-image: url("/image/error-sub-icon.svg");
+  background-image: url("/image/subscribe/error-sub-icon.svg");
 }
 .subscribe-section__form-container:has(input:valid)::after {
-  background-image: url("/image/correct-sub-icon.svg");
+  background-image: url("/image/subscribe/correct-sub-icon.svg");
 }
 .subscribe-section__form-checkbox-container {
   display: flex;
@@ -912,7 +912,7 @@ body {
   right: -16px;
   width: 104px;
   height: 104px;
-  background-image: url("/image/sub-sticker.svg");
+  background-image: url("/image/subscribe/sub-sticker.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -1257,7 +1257,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    mask-image: url("/image/mask-gaming-2.svg");
+    mask-image: url("/image/gaming/mask-gaming-2.svg");
     mask-size: 100%;
     mask-position: center;
     mask-repeat: no-repeat;
@@ -1376,21 +1376,21 @@ body {
     height: 320px;
   }
   .articles-section__img-picture--first {
-    mask-image: url("/image/first-article-mask-2.svg");
+    mask-image: url("/image/articles/first-article-mask-2.svg");
   }
   .articles-section__img-picture--second {
     object-position: 0px 0px;
-    mask-image: url("/image/second-article-mask-2.svg");
+    mask-image: url("/image/articles/second-article-mask-2.svg");
   }
   .articles-section__img-picture--third {
-    mask-image: url("/image/third-article-mask-2.svg");
+    mask-image: url("/image/articles/third-article-mask-2.svg");
   }
   .articles-section__img-picture--fourth {
-    mask-image: url("/image/fourth-article-mask-2.svg");
+    mask-image: url("/image/articles/fourth-article-mask-2.svg");
   }
   .articles-section__img-picture--fifth {
     object-position: left;
-    mask-image: url("/image/fifth-article-mask-2.svg");
+    mask-image: url("/image/articles/fifth-article-mask-2.svg");
   }
   .articles-section__img-sticker {
     width: 104px;
@@ -1605,7 +1605,7 @@ body {
     height: 498px;
     top: 0px;
     left: 561px;
-    background-image: url("/image/tab-sub-img.svg");
+    background-image: url("/image/subscribe/tab-sub-img.svg");
   }
   .subscribe-section__title {
     width: 368px;
@@ -1799,7 +1799,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: bottom;
-    mask-image: url("/image/mask-gaming-3.svg");
+    mask-image: url("/image/gaming/mask-gaming-3.svg");
     mask-size: 100%;
     mask-position: center;
     mask-repeat: no-repeat;
@@ -1917,21 +1917,21 @@ body {
     height: 100%;
   }
   .articles-section__img-picture--first {
-    mask-image: url("/image/first-article-mask-3.svg");
+    mask-image: url("/image/articles/first-article-mask-3.svg");
   }
   .articles-section__img-picture--second {
     object-position: 0px 0px;
-    mask-image: url("/image/second-article-mask-3.svg");
+    mask-image: url("/image/articles/second-article-mask-3.svg");
   }
   .articles-section__img-picture--third {
-    mask-image: url("/image/third-article-mask-3.svg");
+    mask-image: url("/image/articles/third-article-mask-3.svg");
   }
   .articles-section__img-picture--fourth {
-    mask-image: url("/image/fourth-article-mask-3.svg");
+    mask-image: url("/image/articles/fourth-article-mask-3.svg");
   }
   .articles-section__img-picture--fifth {
     object-position: left;
-    mask-image: url("/image/fifth-article-mask-3.svg");
+    mask-image: url("/image/articles/fifth-article-mask-3.svg");
   }
   .articles-section__img-sticker {
     width: 180px;
@@ -2102,14 +2102,14 @@ body {
     padding: 64px 104px;
     margin: 0 auto;
     margin-bottom: 135px;
-    mask-image: url("/image/sub-mask.svg");
+    mask-image: url("/image/subscribe/sub-mask.svg");
   }
   .subscribe-section__container::before {
     width: 416px;
     height: 517px;
     top: 0px;
     left: 1000px;
-    background-image: url("/image/des-sub-img.svg");
+    background-image: url("/image/subscribe/des-sub-img.svg");
   }
   .subscribe-section__title {
     width: 624px;

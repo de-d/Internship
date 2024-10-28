@@ -205,7 +205,7 @@ body {
       height: 100%;
       object-fit: cover;
       object-position: center;
-      background: url('/image/gaming-bg-mob.svg') no-repeat;
+      background: url('/image/gaming/gaming-bg-mob.svg') no-repeat;
       z-index: -1;
     }
 
@@ -218,7 +218,7 @@ body {
         height: 100%;
         object-fit: cover;
         object-position: bottom;
-        mask-image: url('/image/mask-gaming-1.svg');
+        mask-image: url('/image/gaming/mask-gaming-1.svg');
         mask-size: 100%;
         mask-position: center;
         mask-repeat: no-repeat;
@@ -465,25 +465,25 @@ body {
       mask-repeat: no-repeat;
 
       &--first {
-        mask-image: url('/image/first-article-mask-1.svg');
+        mask-image: url('/image/articles/first-article-mask-1.svg');
       }
 
       &--second {
         object-position: -50px 0px;
-        mask-image: url('/image/second-article-mask-1.svg');
+        mask-image: url('/image/articles/second-article-mask-1.svg');
       }
 
       &--third {
-        mask-image: url('/image/third-article-mask-1.svg');
+        mask-image: url('/image/articles/third-article-mask-1.svg');
       }
 
       &--fourth {
-        mask-image: url('/image/fourth-article-mask-1.svg');
+        mask-image: url('/image/articles/fourth-article-mask-1.svg');
       }
 
       &--fifth {
         object-position: left;
-        mask-image: url('/image/fifth-article-mask-1.svg');
+        mask-image: url('/image/articles/fifth-article-mask-1.svg');
       }
     }
 
@@ -744,7 +744,7 @@ body {
   &__card {
     padding: 24px;
     border-radius: 32px;
-    background-image: url('/image/card-bg-1.svg');
+    background-image: url('/image/webinars/card-bg-1.svg');
     background-repeat: no-repeat;
     background-position: right top;
 
@@ -762,10 +762,10 @@ body {
       mask-size: 100%;
       mask-position: center;
       mask-repeat: no-repeat;
-      mask-image: url('/image/avatar-mask.svg');
+      mask-image: url('/image/webinars/avatar-mask.svg');
 
       &--third {
-        background-image: url('/image/third-card-avatar.png');
+        background-image: url('/image/webinars/third-card-avatar.png');
         background-size: 200%;
         background-position: 55% 10%;
         background-repeat: no-repeat;
@@ -935,7 +935,7 @@ body {
     margin: 0 auto;
     margin-bottom: 100px;
     box-sizing: border-box;
-    background-image: url('/image/mob-sub-bg.svg');
+    background-image: url('/image/subscribe/mob-sub-bg.svg');
     background-repeat: no-repeat;
     color: #FCFAF9;
     font-size: 18px;
@@ -949,7 +949,7 @@ body {
       top: 701px;
       left: 152px;
       transform: translateX(-50%);
-      background-image: url('/image/mob-sub-img.svg');
+      background-image: url('/image/subscribe/mob-sub-img.svg');
       background-repeat: no-repeat;
       z-index: 11;
     }
@@ -997,11 +997,11 @@ body {
       }
 
       &:has(input:invalid)::after {
-          background-image: url('/image/error-sub-icon.svg');
+          background-image: url('/image/subscribe/error-sub-icon.svg');
       }
 
       &:has(input:valid)::after {
-          background-image: url('/image/correct-sub-icon.svg');
+          background-image: url('/image/subscribe/correct-sub-icon.svg');
       }
     }
 
@@ -1065,7 +1065,7 @@ body {
       right: -16px;
       width: 104px;
       height: 104px;
-      background-image: url('/image/sub-sticker.svg');
+      background-image: url('/image/subscribe/sub-sticker.svg');
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -1477,7 +1477,7 @@ body {
             height: 100%;
             object-fit: cover;
             object-position: center;
-            mask-image: url('/image/mask-gaming-2.svg');
+            mask-image: url('/image/gaming/mask-gaming-2.svg');
             mask-size: 100%;
             mask-position: center;
             mask-repeat: no-repeat;
@@ -1622,25 +1622,25 @@ body {
         &-picture {
 
           &--first {
-            mask-image: url('/image/first-article-mask-2.svg');
+            mask-image: url('/image/articles/first-article-mask-2.svg');
           }
 
           &--second {
             object-position: 0px 0px;
-            mask-image: url('/image/second-article-mask-2.svg');
+            mask-image: url('/image/articles/second-article-mask-2.svg');
           }
 
           &--third {
-            mask-image: url('/image/third-article-mask-2.svg');
+            mask-image: url('/image/articles/third-article-mask-2.svg');
           }
 
           &--fourth {
-            mask-image: url('/image/fourth-article-mask-2.svg');
+            mask-image: url('/image/articles/fourth-article-mask-2.svg');
           }
 
           &--fifth {
             object-position: left;
-            mask-image: url('/image/fifth-article-mask-2.svg');
+            mask-image: url('/image/articles/fifth-article-mask-2.svg');
           }
         }
 
@@ -1887,7 +1887,7 @@ body {
           height: 498px;
           top: 0px;
           left: 561px;
-          background-image: url('/image/tab-sub-img.svg');
+          background-image: url('/image/subscribe/tab-sub-img.svg');
         }
       }
 
@@ -2131,7 +2131,7 @@ body {
             height: 100%;
             object-fit: cover;
             object-position: bottom;
-            mask-image: url('/image/mask-gaming-3.svg');
+            mask-image: url('/image/gaming/mask-gaming-3.svg');
             mask-size: 100%;
             mask-position: center;
             mask-repeat: no-repeat;
@@ -2279,25 +2279,25 @@ body {
         &-picture {
 
           &--first {
-            mask-image: url('/image/first-article-mask-3.svg');
+            mask-image: url('/image/articles/first-article-mask-3.svg');
           }
 
           &--second {
             object-position: 0px 0px;
-            mask-image: url('/image/second-article-mask-3.svg');
+            mask-image: url('/image/articles/second-article-mask-3.svg');
           }
 
           &--third {
-            mask-image: url('/image/third-article-mask-3.svg');
+            mask-image: url('/image/articles/third-article-mask-3.svg');
           }
 
           &--fourth {
-            mask-image: url('/image/fourth-article-mask-3.svg');
+            mask-image: url('/image/articles/fourth-article-mask-3.svg');
           }
 
           &--fifth {
             object-position: left;
-            mask-image: url('/image/fifth-article-mask-3.svg');
+            mask-image: url('/image/articles/fifth-article-mask-3.svg');
           }
         }
 
@@ -2508,14 +2508,14 @@ body {
         padding: 64px 104px;
         margin: 0 auto;
         margin-bottom: 135px;
-        mask-image: url('/image/sub-mask.svg');
+        mask-image: url('/image/subscribe/sub-mask.svg');
 
         &::before {
           width: 416px;
           height: 517px;
           top: 0px;
           left: 1000px;
-          background-image: url('/image/des-sub-img.svg');
+          background-image: url('/image/subscribe/des-sub-img.svg');
         }
       }
 

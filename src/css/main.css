@@ -8,6 +8,7 @@
   src: url("../fonts/ArchivoBlack-Regular.ttf") format("truetype");
 }
 body {
+  overflow-x: hidden;
   background-color: #F2F2F2;
 }
 
@@ -38,7 +39,7 @@ body {
 }
 .header__logo {
   order: 1;
-  padding: 0 64px 16px 0;
+  padding: 0 64px 13px 0;
 }
 .header__logo-img {
   width: 129px;
@@ -179,7 +180,7 @@ body {
   justify-content: center;
   width: 304px;
   margin: 0 auto;
-  padding-top: 24px;
+  padding-top: 35px;
   font-family: "Nunito", sans-serif;
 }
 .gaming-section::before {
@@ -203,10 +204,14 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom;
   mask-image: url("/image/mask-gaming-1.svg");
   mask-size: 100%;
   mask-position: center;
   mask-repeat: no-repeat;
+}
+.gaming-section__img-img:hover + .gaming-section__img-img-sticker {
+  rotate: 360deg;
 }
 .gaming-section__img-img-sticker {
   position: absolute;
@@ -217,15 +222,12 @@ body {
   rotate: 0deg;
   transition: rotate 1s ease-in-out;
 }
-.gaming-section__img-img-sticker:hover {
-  rotate: 360deg;
-}
 .gaming-section__info-tags {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  padding-top: 18px;
+  padding-top: 22px;
 }
 .gaming-section__info-tag {
   margin: 0;
@@ -245,11 +247,13 @@ body {
   font-family: "Archivo", sans-serif;
   font-size: 26px;
   padding-top: 16px;
+  line-height: 120%;
 }
 .gaming-section__info-text {
   font-size: 18px;
   color: #757778;
   padding-top: 16px;
+  line-height: 160%;
 }
 .gaming-section__info-dateandtime {
   display: flex;
@@ -292,6 +296,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 304px;
+  height: 59px;
+  box-sizing: border-box;
   margin-top: 56px;
 }
 .gaming-section__button-btn {
@@ -340,11 +347,11 @@ body {
   width: 100%;
   max-width: 304px;
   margin: 0 auto;
-  padding-top: 24px;
+  padding-top: 35px;
 }
 .articles-section .articles-section__running-line {
   max-width: 99vw;
-  height: 90px;
+  height: 80px;
   overflow: hidden;
   white-space: nowrap;
   background-color: #ACD6DE;
@@ -353,7 +360,7 @@ body {
 .articles-section .articles-section__content {
   display: flex;
   align-items: center;
-  animation: marquee 10s linear infinite;
+  animation: marquee 40s linear infinite;
   transform: skewY(4deg);
 }
 .articles-section .articles-section__running-line-text {
@@ -379,8 +386,8 @@ body {
 .articles-section__articles {
   display: flex;
   flex-direction: column;
-  gap: 104px;
-  padding-top: 120px;
+  gap: 105px;
+  padding-top: 165px;
 }
 .articles-section__img {
   position: relative;
@@ -413,15 +420,15 @@ body {
   object-position: left;
   mask-image: url("/image/fifth-article-mask-1.svg");
 }
+.articles-section__img-picture:hover + .articles-section__img-sticker {
+  rotate: 360deg;
+}
 .articles-section__img-sticker {
   position: absolute;
   width: 120px;
   height: 120px;
   rotate: 0deg;
   transition: rotate 1s ease-in-out;
-}
-.articles-section__img-sticker:hover {
-  rotate: 360deg;
 }
 .articles-section__img-sticker--first {
   top: 8px;
@@ -508,6 +515,7 @@ body {
   font-size: 18px;
   color: #757778;
   padding-top: 16px;
+  line-height: 160%;
 }
 .articles-section__date-time {
   display: flex;
@@ -562,7 +570,7 @@ body {
 }
 .webinars-section__running-line {
   width: 100vw;
-  height: 90px;
+  height: 80px;
   overflow: hidden;
   white-space: nowrap;
   background-color: #FFAD20;
@@ -570,7 +578,7 @@ body {
 }
 .webinars-section__running-line--first {
   position: absolute;
-  top: -115px;
+  top: -109px;
   margin-top: 40px;
 }
 .webinars-section__running-line--second {
@@ -615,11 +623,12 @@ body {
 }
 .webinars-section__title {
   font-size: 28px;
-  padding: 40px 0;
+  padding: 0 0 40px 0;
   margin: 0;
-  margin-top: 60px;
+  margin-top: 76px;
   text-align: center;
   font-family: "Archivo", sans-serif;
+  line-height: 120%;
 }
 .webinars-section__cards {
   display: flex;
@@ -683,6 +692,7 @@ body {
   font-size: 24px;
   margin: 0;
   padding: 16px 0 32px 0;
+  line-height: 120%;
 }
 .webinars-section__card-footer-titles {
   display: flex;
@@ -694,7 +704,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   gap: 15px;
-  padding-top: 12px;
+  padding-top: 15px;
 }
 .webinars-section__card-footer-date, .webinars-section__card-footer-time {
   display: flex;
@@ -737,7 +747,7 @@ body {
   background-color: #EF9700;
 }
 .webinars-section__button {
-  padding: 64px 0 74px 0;
+  padding: 64px 0 57px 0;
   margin: 0 auto;
 }
 .webinars-section__button-btn {
@@ -1073,10 +1083,36 @@ body {
   margin-top: 25px;
 }
 .footer__menu-item {
+  position: relative;
   color: #FCFAF9;
   font-size: 15px;
   line-height: 140%;
   list-style-type: none;
+}
+.footer__menu-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #FCFAF9;
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+}
+@media (hover: hover) {
+  .footer__menu-item:hover::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+  }
+}
+@media (hover: none) {
+  .footer__menu-item:active::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+  }
 }
 .footer__contact-title {
   margin: 0;
@@ -1086,10 +1122,36 @@ body {
   text-transform: uppercase;
 }
 .footer__contact-text {
+  position: relative;
   margin: 0;
   font-size: 18px;
   line-height: 160%;
   color: #FCFAF9;
+}
+.footer__contact-text::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #FCFAF9;
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+}
+@media (hover: hover) {
+  .footer__contact-text:hover::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+  }
+}
+@media (hover: none) {
+  .footer__contact-text:active::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+  }
 }
 .footer__privacy-text {
   margin: 0;
@@ -1155,6 +1217,7 @@ body {
 
 @media (min-width: 768px) {
   .header {
+    position: relative;
     max-width: 768px;
     max-height: 133px;
     padding-top: 16px;
@@ -1164,9 +1227,15 @@ body {
     padding-bottom: 24px;
   }
   .header__logo {
-    padding: 0 465px 24px 0;
+    padding: 0 486px 30px 0;
+  }
+  .header__logo-img {
+    width: 108px;
+    height: 40px;
   }
   .header__nav {
+    position: absolute;
+    top: 80px;
     width: 704px;
     justify-content: space-between;
   }
@@ -1176,6 +1245,7 @@ body {
   .gaming-section {
     width: 768px;
     justify-content: center;
+    padding-top: 90px;
   }
   .gaming-section__img {
     position: relative;
@@ -1186,6 +1256,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     mask-image: url("/image/mask-gaming-2.svg");
     mask-size: 100%;
     mask-position: center;
@@ -1194,12 +1265,14 @@ body {
   .gaming-section__img-img-sticker {
     width: 120px;
     height: 120px;
+    top: 10px;
   }
   .gaming-section__info {
     display: flex;
     width: 704px;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 24px 0 0 21px;
   }
   .gaming-section__info-tags {
     order: 1;
@@ -1208,26 +1281,26 @@ body {
     width: 172px;
     max-height: 63px;
     font-size: 15px;
-    padding-bottom: 24px;
+    padding: 0 0 0 24px;
   }
   .gaming-section__info-tag {
     order: 2;
   }
   .gaming-section__info-tag--active {
     order: 1;
-    margin-left: 83px;
-    margin-right: 0;
+    margin: 3px 0 5px 83px;
   }
   .gaming-section__info-title {
     order: 2;
     width: 461px;
-    padding-left: 24px;
+    padding: 0 0 0 24px;
   }
   .gaming-section__info-text {
     order: 4;
     width: 461px;
     line-height: 120%;
-    padding: 8px 0 0 24px;
+    padding: 9px 0 0 29px;
+    line-height: 160%;
   }
   .gaming-section__info-dateandtime {
     order: 3;
@@ -1235,6 +1308,7 @@ body {
     flex-direction: column;
     width: 172px;
     padding-top: 0px;
+    padding-left: 22px;
     gap: 8px;
   }
   .gaming-section__info-date, .gaming-section__info-time {
@@ -1261,6 +1335,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
   }
+  .gaming-section__button {
+    margin: 0 auto;
+    margin-top: 46px;
+  }
   .gaming-section__button-btn {
     width: 222px;
     height: 49px;
@@ -1268,20 +1346,22 @@ body {
   .articles-section {
     width: 100%;
     max-width: 768px;
-    padding-bottom: 254px;
+    padding-top: 60px;
+    padding-bottom: 235px;
   }
   .articles-section__articles {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    padding-top: 160px;
+    padding-top: 180px;
   }
   .articles-section__article {
     width: 340px;
   }
   .articles-section__article--third {
     width: 704px;
+    margin: 82px 0 115px 0;
   }
   .articles-section__img {
     width: 340px;
@@ -1343,6 +1423,9 @@ body {
   .articles-section__tags {
     padding-top: 24px;
   }
+  .articles-section__title {
+    width: 100%;
+  }
   .articles-section__text {
     padding-top: 14px;
   }
@@ -1372,6 +1455,8 @@ body {
     order: 2;
     width: 461px;
     padding-left: 24px;
+    padding-top: 24px;
+    font-size: 26px;
   }
   .articles-section__date-time--third {
     order: 3;
@@ -1384,7 +1469,7 @@ body {
   .articles-section__text--third {
     order: 4;
     width: 461px;
-    line-height: 120%;
+    line-height: 160%;
     padding: 8px 0 0 24px;
   }
   .articles-section__date--third,
@@ -1417,20 +1502,26 @@ body {
     padding-bottom: 0;
     margin-top: 0;
   }
+  .webinars-section__running-line {
+    transform: skewY(-3deg);
+    height: 80px;
+  }
   .webinars-section__running-line--first {
     top: -90px;
     margin-bottom: 55px;
   }
   .webinars-section__running-line--second {
+    height: 80px;
     bottom: -50px;
-    margin-top: 55px;
+    margin-top: 0px;
+    transform: skewY(3deg);
   }
   .webinars-section__content {
     flex-direction: row;
     flex-wrap: wrap;
     width: 704px;
-    padding-top: 106px;
-    padding-bottom: 113px;
+    padding-top: 114px;
+    padding-bottom: 135px;
   }
   .webinars-section__title {
     order: 1;
@@ -1448,6 +1539,7 @@ body {
   }
   .webinars-section__card {
     width: 340px;
+    height: 401px;
     box-sizing: border-box;
   }
   .webinars-section__card-header {
@@ -1465,8 +1557,12 @@ body {
   .webinars-section__card-text {
     width: 292px;
   }
+  .webinars-section__card-footer--first {
+    padding-top: 50px;
+  }
   .webinars-section__card--third {
     width: 704px;
+    height: 272px;
     box-sizing: border-box;
   }
   .webinars-section__card--third .webinars-section__card-header,
@@ -1500,7 +1596,7 @@ body {
     width: 520px;
     height: 498px;
     padding: 40px 24px;
-    margin: 160px 185px 109px 0;
+    margin: 167px 185px 109px 0;
     background-color: #57ACBC;
     border-radius: 37.5px;
   }
@@ -1660,10 +1756,12 @@ body {
 }
 @media (min-width: 1280px) {
   .header {
-    max-width: 1440px;
-    max-height: 72px;
+    max-width: 1208px;
+    height: 72px;
     justify-content: space-between;
-    padding: 16px 116px;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 0 0 0;
   }
   .header__logo {
     order: 1;
@@ -1674,8 +1772,11 @@ body {
     padding-bottom: 0px;
   }
   .header__nav {
+    position: relative;
+    top: 0;
     order: 2;
     padding: 0;
+    margin: 0;
   }
   .header__nav-item:nth-child(6) {
     display: block;
@@ -1685,6 +1786,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 80px;
   }
   .gaming-section__img {
     position: relative;
@@ -1705,6 +1807,8 @@ body {
   .gaming-section__img-img-sticker {
     width: 180px;
     height: 180px;
+    top: 0;
+    right: 0;
   }
   .gaming-section__container {
     display: flex;
@@ -1716,6 +1820,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 688px;
+    padding: 0 0 0 0;
   }
   .gaming-section__info-tags {
     display: flex;
@@ -1728,24 +1833,27 @@ body {
   }
   .gaming-section__info-tag--active {
     margin: 0;
+    margin-right: 6px;
   }
   .gaming-section__info-title {
-    width: 420px;
-    padding: 18px 0 0 0;
+    width: 688px;
+    font-size: 36px;
+    line-height: 120%;
+    padding: 19px 0 0 0;
   }
   .gaming-section__info-text {
-    width: 440px;
+    width: 480px;
     text-align: left;
     line-height: 160%;
     padding: 16px 0 0 0;
   }
   .gaming-section__info-dateandtime {
     order: 4;
+    width: 300px;
     display: flex;
     flex-direction: row;
-    width: 227px;
-    padding-top: 16px;
-    gap: 8px;
+    padding: 16px 0 0 0;
+    gap: 24px;
   }
   .gaming-section__info-date, .gaming-section__info-time {
     margin: 0;
@@ -1767,23 +1875,34 @@ body {
   .articles-section {
     width: 100%;
     max-width: 1280px;
+    padding-top: 127px;
+    padding-bottom: 213px;
   }
   .articles-section__articles {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    padding-top: 160px;
+    padding-top: 200px;
   }
   .articles-section .articles-section__running-line {
-    max-width: 99.1vw;
+    max-width: 100vw;
+    height: 120px;
+  }
+  .articles-section .articles-section__content {
+    height: 100%;
+  }
+  .articles-section .articles-section__running-line-text {
+    font-size: 58px;
   }
   .articles-section__article {
     width: 584px;
   }
   .articles-section__article--third {
     width: 1208px;
-    padding: 83px 0;
+    padding: 0;
+    margin-top: 100px;
+    margin-bottom: 96px;
   }
   .articles-section__img {
     max-width: 1208px;
@@ -1820,15 +1939,16 @@ body {
   }
   .articles-section__img-sticker--first {
     top: -45px;
-    left: -50px;
+    left: -40px;
   }
   .articles-section__img-sticker--second {
-    top: -50px;
-    right: -50px;
+    top: -45px;
+    right: -40px;
   }
   .articles-section__img-sticker--third {
     top: -30px;
     left: 1070px;
+    top: -50px;
   }
   .articles-section__img-sticker--fourth {
     width: 240px;
@@ -1842,7 +1962,7 @@ body {
     left: 444px;
   }
   .articles-section__tags {
-    padding-top: 24px;
+    padding-top: 33px;
   }
   .articles-section__title {
     width: 100%;
@@ -1850,7 +1970,7 @@ body {
   }
   .articles-section__text {
     width: 480px;
-    padding-top: 14px;
+    padding-top: 15px;
     font-size: 18px;
   }
   .articles-section__info--third {
@@ -1858,16 +1978,18 @@ body {
   }
   .articles-section__tags--third {
     width: 182px;
+    padding-top: 65px;
     margin-left: 200px;
   }
   .articles-section__tag--active-third {
-    margin-left: 98px;
-    margin-right: 0;
+    margin-left: 89px;
+    margin-right: 9px;
   }
   .articles-section__title--third {
-    width: 600px;
-    padding-left: 16px;
-    margin-right: 210px;
+    width: 700px;
+    padding: 47px 0 0 12px;
+    margin-right: 110px;
+    font-size: 36px;
   }
   .articles-section__date-time--third {
     width: 172px;
@@ -1876,18 +1998,19 @@ body {
   }
   .articles-section__text--third {
     width: 688px;
-    line-height: 120%;
+    line-height: 160%;
     padding: 8px 0 0 16px;
     margin-right: 121px;
   }
   .webinars-section__running-line {
     width: 100%;
+    height: 120px;
   }
   .webinars-section__running-line--first {
     top: -56px;
     max-height: 120px;
     margin: 0;
-    transform: skewY(-2deg);
+    transform: skewY(-3deg);
   }
   .webinars-section__running-line--second {
     bottom: -55px;
@@ -1895,12 +2018,18 @@ body {
     margin: 0;
     transform: skewY(2deg);
   }
+  .webinars-section__running-line-container {
+    height: 120px;
+  }
+  .webinars-section__running-line-content {
+    font-size: 58px;
+  }
   .webinars-section__content {
     flex-direction: row;
     flex-wrap: wrap;
     width: 1208px;
-    padding-top: 100px;
-    padding-bottom: 113px;
+    padding-top: 150px;
+    padding-bottom: 170px;
   }
   .webinars-section__title {
     order: 1;
@@ -1915,7 +2044,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    margin: 64px 0 0 0;
+    margin: 80px 0 0 0;
   }
   .webinars-section__card {
     width: 376px;
@@ -1942,6 +2071,9 @@ body {
     font-size: 30px;
     padding-top: 16px;
     padding-bottom: 40px;
+  }
+  .webinars-section__card-footer--first {
+    padding-top: 0;
   }
   .webinars-section__card--third .webinars-section__card-header,
   .webinars-section__card--third .webinars-section__card-text {

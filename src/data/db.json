@@ -1,0 +1,297 @@
+{
+  "menu": {
+    "logo": "/img/logo.jpg",
+    "header": [
+      {
+        "label": "Diseño",
+        "url": "#"
+      },
+      {
+        "label": "Programación & Data",
+        "url": "#"
+      },
+      {
+        "label": "Gaming",
+        "url": "#"
+      },
+      {
+        "label": "Marketing",
+        "url": "#"
+      },
+      {
+        "label": "Software",
+        "url": "#"
+      },
+      {
+        "label": "Carrera",
+        "url": "#"
+      }
+    ],
+    "footer": [
+      {
+        "label": "CURSOS",
+        "items": [
+          {
+            "label": "Diseño",
+            "url": "#"
+          },
+          {
+            "label": "Programación & Data",
+            "url": "#"
+          },
+          {
+            "label": "Gaming",
+            "url": "#"
+          },
+          {
+            "label": "Marketing",
+            "url": "#"
+          },
+          {
+            "label": "Software",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "label": "WEBINARS",
+        "items": [
+          {
+            "label": "Próximamente",
+            "url": "#"
+          },
+          { "label": "Anteriores", "url": "#" }
+        ]
+      },
+      {
+        "label": "SOBRE",
+        "items": [
+          {
+            "label": "Sobre nostros",
+            "url": "#"
+          },
+          { "label": "Centro de carreras", "url": "#" },
+          { "label": "Vacantes" }
+        ]
+      },
+      {
+        "label": "BLOG",
+        "items": [
+          {
+            "label": "Diseño",
+            "url": "#"
+          },
+          {
+            "label": "Programación & Data",
+            "url": "#"
+          },
+          {
+            "label": "Gaming",
+            "url": "#"
+          },
+          {
+            "label": "Marketing",
+            "url": "#"
+          },
+          {
+            "label": "Software",
+            "url": "#"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": {
+    "main": {
+      "items": [
+        {
+          "title": "El Artista Técnico, cuando la programación y el diseño de juegos se juntan",
+          "text": "¡Es posible unir la pasión por los dos universos! ¿Habías escuchado este término antes? Si no te suena de nada, no te sientas mal, el concepto es nuevo. ¡Nosotros te lo explicamos!",
+          "accent": "#bedb39",
+          "date": "02.06.2022",
+          "duration": 10,
+          "browse-text": "Leer el artículo",
+          "size": "full-size",
+          "tags": ["Gaming", "Artículo", "Niños", "Proyecto"],
+          "img": {
+            "url": "/img/sections/main/1.jpg",
+            "shape": "arch"
+          },
+          "stamp": {
+            "word": "Gaming",
+            "type": "circle",
+            "position": "top-right"
+          }
+        }
+      ],
+      "ticker": { "text": "Artículos populares", "color:": "#acd6de" }
+    },
+    "content": {
+      "items": [
+        {
+          "title": "¿Cómo hacer el cambio de carrera a Diseño de Productos Digitales?",
+          "text": "¿Quieres saber qué se estudia para ser paisajista y formar parte de uno de los gremios que están en auge a nivel laboral? Sigue leyendo.",
+          "accent": "#90eecb",
+          "date": "02.06.2022",
+          "duration": 10,
+          "size": "compact",
+          "tags": ["Fashion", "Artículo", "Niños", "Proyecto"],
+          "img": {
+            "url": "/img/sections/content/1.jpg",
+            "shape": "semi-squared-rounded"
+          },
+          "stamp": {
+            "word": "Fashion",
+            "type": "star",
+            "position": "top-left"
+          }
+        },
+        {
+          "title": "¿Qué hace un paisajista y cuánto gana?",
+          "text": "¿Quieres saber qué se estudia para ser paisajista y formar parte de uno de los gremios que están en auge a nivel laboral? Sigue leyendo.",
+          "accent": "#ec95b1",
+          "date": "02.06.2022",
+          "duration": 10,
+          "size": "compact",
+          "tags": ["Diseño", "Artículo", "Niños", "Proyecto"],
+          "img": {
+            "url": "/img/sections/content/2.jpg",
+            "shape": "semi-squared-cloud"
+          },
+          "stamp": {
+            "word": "Diseño",
+            "type": "cookie",
+            "position": "top-right"
+          }
+        },
+        {
+          "title": "Todo lo que querías saber sobre Diseño UX / UI",
+          "text": "Aunque los conceptos de experiencia de usuario y desarrollo de interfaces han estado presentes durante décadas en numerosas industrias, muchas personas aún tienen dudas sobre lo que realmente hace un profesional en este campo.",
+          "accent": "#ec95b1",
+          "date": "02.06.2022",
+          "duration": 10,
+          "size": "full-image",
+          "tags": ["Diseño", "Artículo", "Niños", "Proyecto"],
+          "img": {
+            "url": "/img/content-3.jpg",
+            "shape": "cloud"
+          },
+          "stamp": {
+            "word": "Diseño",
+            "type": "cookie",
+            "position": "top-right"
+          }
+        },
+        {
+          "title": "Por qué algunas marcas fallan en el rebranding",
+          "text": "As falhas de grandes marcas como Gap e Coca Cola explicadas.",
+          "accent": "#ffad20",
+          "date": "02.06.2022",
+          "duration": 10,
+          "size": "compact",
+          "tags": ["Marketing", "Artículo", "Niños", "Proyecto"],
+          "img": {
+            "url": "/img/sections/content/4.jpg",
+            "shape": "corner-squared-cloud"
+          },
+          "stamp": {
+            "word": "Marketing",
+            "type": "signboard",
+            "position": "top-left"
+          }
+        },
+        {
+          "title": "¿Qué es AutoCAD y para qué sirve?",
+          "text": "Unity te ofrece un gran abanico de posibilidades para desarrollar tu juego, darlo a conocer en todo el mundo, monetizar y triunfar por todo lo alto.",
+          "accent": "#acd6de",
+          "date": "02.06.2022",
+          "duration": 10,
+          "size": "compact",
+          "tags": ["Software", "Artículo", "Niños", "Proyecto"],
+          "img": {
+            "url": "/img/sections/content/5.jpg",
+            "shape": "corner-squared-rounded"
+          },
+          "stamp": {
+            "word": "Software",
+            "type": "donut",
+            "position": "top-right"
+          }
+        }
+      ],
+      "ticker": { "text": "Webinars", "color:": "#ffad20" }
+    },
+    "proposals": {
+      "title": "Webinars gratuitos",
+      "browse-all-text": "Todos os webinars",
+      "items": [
+        {
+          "background": "#57acbc",
+          "author": {
+            "img": "/img/proposals/authors/1.jpg",
+            "name": "Julia Alvarez",
+            "position": "Programador, consultor"
+          },
+          "text": "Cómo iniciar el calendario de publicaciones de tu marca",
+          "tags": ["Próximamente", "Webinar"],
+          "date_from": "31.05.2024",
+          "date_to": "02.06.2024",
+          "time": "19:00"
+        },
+        {
+          "background": "#57acbc",
+          "author": {
+            "img": "/img/proposals/authors/1.jpg",
+            "name": "Julia Alvarez",
+            "position": "Programador, consultor"
+          },
+          "text": "Cómo iniciar el calendario de publicaciones de tu marca",
+          "tags": ["Próximamente", "Webinar"],
+          "date_from": "31.05.2024",
+          "date_to": "02.06.2024",
+          "time": "19:00"
+        },
+        {
+          "background": "#ef9700",
+          "author": {
+            "img": "/img/proposals/authors/2.jpg",
+            "name": "Consuela Zacatelco",
+            "position": "Empresario graduado de la Universidad de Harvard"
+          },
+          "text": "Ilustración Digital: 3 diferentes estilos de diseño",
+          "tags": ["Próximamente", "Demonstração"],
+          "date_from": "01.06.2024",
+          "date_to": "02.06.2024",
+          "time": "19:00"
+        }
+      ],
+      "ticker": { "text": "Suscríbete", "color:": "#fe6d44" }
+    },
+    "subscription": {
+      "title": "Suscríbete a nuestra newsletter para no perderte nada nuevo",
+      "text": "Tendencia en el mercado laboral: conozca esta profesión que transforma la experiencia del Usuario a través de elementos textuales.",
+      "email-placeholder": "Su correo electrónico",
+      "submit-text": "Enviar",
+      "agreement-text": "Confirmo que he leído, acepto y entiendo los términos y condiciones, así como el aviso de privacidad",
+      "ticker": { "text": "Descuento para cursos 20%", "color:": "#da3369" }
+    }
+  },
+  "contacts": {
+    "whatsapp": "525592252629",
+    "phone": "525592252629",
+    "email": "Ebac.mx@gmail.com",
+    "instagram": "#",
+    "facebook": "#",
+    "youtube": "#",
+    "linkedin": "#",
+    "links": [
+      { "label": "Aviso de privacidad alumnos", "url": "#" },
+      { "label": "Aviso de privacidad profesores", "url": "#" },
+      { "label": "Términos y condiciones", "url": "#" }
+    ],
+    "subscription": {
+      "email-placeholder": "Su correo electrónico",
+      "submit-text": "Suscribirse al boletín"
+    }
+  }
+}

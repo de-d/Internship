@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../../fonts/static/Nunito-Medium.ttf') format('truetype');
+  }
+
 .header {
     display: flex;
     align-items: center;
@@ -8,6 +15,8 @@
     padding-top: 12px;
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
+    line-height: 140%;
+    font-weight: 500;
 
     &__top {
         display: flex;
@@ -22,12 +31,12 @@
         display: flex;
         align-items: center;
         gap: 22px;
-        padding-bottom: 16px;
+        padding-bottom: 14px;
     }
 
     &__logo {
         order: 1;
-        padding: 0 64px 13px 0;
+        padding: 0 64px 10px 0;
     }
 
     &__logo_img {
@@ -57,8 +66,9 @@
     }
 
     &__search_img {
-        width: 22px;
-        height: 24px;
+        width: 20px;
+        height: 22px;
+        padding: 0 0 2px 2px;
     }
 
     &__link {
@@ -98,7 +108,10 @@
     }
 
 
-    &__link_text {}
+    &__link_text {
+        margin: 0;
+        padding: 0 0 2px 1px;
+    }
 
     &__link_img {
         width: 18px;
@@ -108,6 +121,7 @@
     &__nav {
         order: 3;
         display: flex;
+        height: 37px;
         overflow: scroll;
         gap: 8px;
 
@@ -116,13 +130,15 @@
         }
 
         &_item {
-            padding: 8px 18px;
+            padding: 6.5px 17.5px;
             border: 1.2px solid #E8E8E8;
             border-radius: 20px;
             background: none;
             white-space: nowrap;
             text-decoration: none;
             color: inherit;
+            line-height: 140%;
+            font-size: 15px;
             cursor: pointer;
         }
         @media (hover: hover) {
@@ -189,11 +205,22 @@
         justify-content: center;
 
         &__right_menu {
-          padding-bottom: 24px;
-      }
+            width: 114px;
+            padding-bottom: 35px;
+        }
+
+        &__search_img {
+            width: 20px;
+            height: 22px;
+            padding: 0;
+        }
+
+        &__link_text {
+            padding: 0 0 2px 4px;
+        }
 
         &__logo {
-            padding: 0 486px 30px 0;
+            padding: 0 482px 30px 0;
 
             &_img {
               width: 108px;
@@ -203,7 +230,8 @@
 
         &__nav {
           position: absolute;
-          top: 80px;
+          top: 79px;
+          left: 31.5px;
           width: 704px;
           justify-content: space-between;
 
@@ -221,11 +249,11 @@
         justify-content: space-between;
         align-items: center;
         margin: 0 auto;
-        padding: 0 0 0 0;
+        padding: 0;
 
         &__logo {
             order: 1;
-            padding: 0;
+            padding: 5px 0 0 0;
         }
 
         &__right_menu{
@@ -236,12 +264,11 @@
         &__nav {
           position: relative;
           top: 0;
+          left: 4px;
           order: 2;
           padding: 0;
           margin: 0;
-          &_item:nth-child(6) {
-              display: block;
-          }
+          gap: 10px;
         }
     }
 }

@@ -34,7 +34,7 @@ export default function GamingSection() {
           <div className={style.gaming_section__info_text}>{dataItem?.text}</div>
           <div className={style.gaming_section__info_dateandtime}>
             <div className={style.gaming_section__info_date}>
-              <p className={style.gaming_section__info_date_text}>{dataItem?.date}</p>
+              <p className={style.gaming_section__info_date_text}>2 de junio de 2022</p>
             </div>
             <div className={style.gaming_section__info_time}>
               <p className={style.gaming_section__info_time_text}>{dataItem?.duration} min</p>

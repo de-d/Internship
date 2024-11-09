@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../../fonts/static/Nunito-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 500;
+  font-style: normal;
+  src: url('../../fonts/static/Nunito-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../../fonts/ArchivoBlack-Regular.ttf') format('truetype');
+}
+
+
 .gaming_section {
   display: flex;
   flex-direction: column;
@@ -43,7 +65,7 @@
 
     &_sticker {
       position: absolute;
-      top: 0px;
+      top: 8px;
       right: 8px;
       width: 104px;
       height: 104px;
@@ -62,30 +84,34 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      padding-top: 22px;
+      padding-top: 19px;
+      font-size: 15px;
 
     }
 
     &_tag {
       margin: 0;
       color: #94AC23;
+      font-weight: 400;
+      line-height: 140%;
 
       &:nth-child(1) {
         width: 53px;
-        max-height: 21px;
+        height: 21px;
         margin-right: 6px;
         padding: 8px 18px;
         border-radius: 20px;
         color: #1B1F21;
         font-size: 15px;
         background: #BEDB39;
+        font-weight: 500;
       }
     }
 
     &_title{
       font-family: 'Archivo', sans-serif;
       font-size: 26px;
-      padding-top: 16px;
+      padding-top: 15px;
       line-height: 120%;
     }
 
@@ -94,6 +120,7 @@
       color: #757778;
       padding-top: 16px;
       line-height: 160%;
+      font-weight: 400;
     }
 
     &_dateandtime {
@@ -113,11 +140,13 @@
       gap: 8px;
       color: #757778;
       font-size: 15px;
+      font-weight: 400;
+      line-height: 140%;
     }
     &_date::before {
       content: '';
-      width: 15px;
-      height: 15px;
+      width: 17px;
+      height: 17px;
       background-image: url('/image/date-icon.svg');
       background-size: cover;
       background-repeat: no-repeat;
@@ -125,8 +154,8 @@
     }
     &_time::before {
       content: '';
-      width: 15px;
-      height: 15px;
+      width: 17px;
+      height: 17px;
       background-image: url('/image/time-icon.svg');
       background-size: cover;
       background-repeat: no-repeat;
@@ -150,9 +179,11 @@
     margin-top: 56px;
 
     &_btn {
-      width: 294px;
-      height: 59px;
+      width: 291px;
+      height: 49px;
       font-size: 18px;
+      font-weight: 500;
+      line-height: 160%;
       padding: 10px 50px;
       border-radius: 30px;
       border: 1.5px solid #1B1F21;
@@ -200,7 +231,7 @@
   .gaming_section {
       width: 768px;
       justify-content: center;
-      padding-top: 90px;
+      padding-top: 89px;
 
       &__img {
           position: relative;
@@ -220,7 +251,7 @@
         &_sticker {
           width: 120px;
           height: 120px;
-          top: 10px;
+          top: 8px;
         }
       }
 
@@ -229,16 +260,16 @@
           width: 704px;
           justify-content: center;
           flex-wrap: wrap;
-          padding: 24px 0 0 21px;
+          padding: 23px 0 0 21px;
 
         &_tags {
           order: 1;
           display: flex;
           flex-wrap: wrap;
           width: 172px;
-          max-height: 63px;
+          max-height: 70px;
           font-size: 15px;
-          padding: 0 0 0 24px;
+          padding: 1px 0 0 27px;
         }
 
         &_tag {
@@ -246,21 +277,21 @@
 
           &:nth-child(1) {
             order: 1;
-            margin: 3px 0 5px 83px;
+            margin: 0 0 0 83px;
           }
         }
 
         &_title{
           order: 2;
           width: 461px;
-          padding: 0 0 0 24px;
+          padding: 0 0 0 23px;
         }
 
         &_text{
           order: 4;
           width: 461px;
           line-height: 120%;
-          padding: 9px 0 0 29px;
+          padding: 8px 0 0 24px;
           line-height: 160%;
         }
 
@@ -269,8 +300,8 @@
           display: flex;
           flex-direction: column;
           width: 172px;
-          padding-top: 0px;
-          padding-left: 22px;
+          padding-top: 1px;
+          padding-left: 25px;
           gap: 8px;
         }
 
@@ -286,8 +317,8 @@
 
         &_date::after {
           content: '';
-          width: 15px;
-          height: 15px;
+          width: 17px;
+          height: 17px;
           background-image: url('/image/date-icon.svg');
           background-size: cover;
           background-repeat: no-repeat;
@@ -295,8 +326,8 @@
         }
         &_time::after {
           content: '';
-          width: 15px;
-          height: 15px;
+          width: 17px;
+          height: 17px;
           background-image: url('/image/time-icon.svg');
           background-size: cover;
           background-repeat: no-repeat;
@@ -306,8 +337,8 @@
       }
 
       &__button {
-        margin: 0 auto;
-        margin-top: 46px;
+        margin-top: 49px;
+        margin-left: 217px;
         &_btn {
           width: 222px;
           height: 49px;

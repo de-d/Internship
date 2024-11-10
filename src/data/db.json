@@ -1,6 +1,6 @@
 {
   "menu": {
-    "logo": "/img/logo.jpg",
+    "logo": "/img/logo-icon.svg",
     "header": [
       {
         "label": "Diseño",
@@ -114,7 +114,7 @@
           "size": "full-size",
           "tags": ["Gaming", "Artículo", "Niños", "Proyecto"],
           "img": {
-            "url": "/img/sections/main/1.jpg",
+            "url": "/img/gaming/gaming-img.png",
             "shape": "arch"
           },
           "stamp": {

@@ -18,8 +18,8 @@ export default function GamingSection() {
   return (
     <section className={style.gaming_section}>
       <div className={style.gaming_section__img}>
-        <img className={style.gaming_section__img_img} src="/image/gaming/gaming-img.png" alt="Изображение" />
-        <img className={style.gaming_section__img_sticker} src="image/gaming/gaming-sticker.svg" alt="Изображение" />
+        <img className={style.gaming_section__img_img} src={dataItem?.img.url} alt="Изображение" />
+        <img className={style.gaming_section__img_sticker} src="img/gaming/gaming-sticker.svg" alt="Изображение" />
       </div>
       <div className={style.gaming_section__container}>
         <div className={style.gaming_section__info}>

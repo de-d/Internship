@@ -24,7 +24,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
-        <img className={styles.header__logo_img} src="image/logo-icon.svg" alt="Логотип" />
+        <img className={styles.header__logo_img} src={data?.logo} alt="Логотип" />
       </div>
       <nav className={styles.header__nav}>
         {data?.header.map((item) => (
@@ -36,12 +36,12 @@ export function Header() {
       <div className={styles.header__right_menu}>
         <div className={styles.header__search}>
           <button className={styles.header__search_icon}>
-            <img className={styles.header__search_img} src="image/header/search-icon.svg" alt="Поиск" />
+            <img className={styles.header__search_img} src="img/header/search-icon.svg" alt="Поиск" />
           </button>
         </div>
         <div className={styles.header__link}>
           <p className={styles.header__link_text}>EBAC</p>
-          <img className={styles.header__link_img} src="image/header/link.svg" alt="Ссылка" />
+          <img className={styles.header__link_img} src="img/header/link.svg" alt="Ссылка" />
         </div>
       </div>
     </header>

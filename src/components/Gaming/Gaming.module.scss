@@ -21,6 +21,7 @@
 
 
 .gaming_section {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,20 +29,24 @@
   width: 304px;
   margin: 0 auto;
   padding-top: 35px;
+  padding-bottom: 35px;
   font-family: 'Nunito', sans-serif;
 
 
   &::before {
     content: '';
     position: absolute;
-    top: 0px;
-    right: 2px;
-    width: 100%;
+    top: 100px;
+    right: -8px;
+    width: 304px;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-    background: url('img/gaming/gaming-bg-mob.svg') no-repeat;
+    background: url('img/gaming/gaming-bg-1.svg') no-repeat center;
     z-index: -1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
   }
 
   &__img {
@@ -231,12 +236,25 @@
   .gaming_section {
       width: 768px;
       justify-content: center;
-      padding-top: 89px;
+      padding-top: 49px;
+      padding-bottom: 57px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -90px;
+        right: 0px;
+        width: 768px;
+        height: 876px;
+        background: url('img/gaming/gaming-bg-2.svg') no-repeat center;
+        z-index: -1;
+      }
 
       &__img {
           position: relative;
           width: 704px;
           height: 320px;
+          padding-left: 10px;
         &_img {
           width: 100%;
           height: 100%;
@@ -351,16 +369,37 @@
 
 @media (min-width: 1280px) {
   .gaming_section {
-      width: 1208px;
+      position: relative;
+      width: 1440px;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       padding-top: 80px;
+      padding-bottom: 127px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 55px;
+        right: 0px;
+        width: 100%;
+        height: 100vh;
+        background: url('img/gaming/gaming-bg-3.svg') no-repeat;
+        z-index: -1;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: row;
+        width: 1208px;
+      }
+
       &__img {
           position: relative;
           width: 480px;
           height: 560px;
           margin-right: 40px;
+          padding-left: 0px;
         &_img {
           width: 100%;
           height: 100%;
@@ -390,7 +429,7 @@
           display: flex;
           flex-direction: column;
           width: 688px;
-          padding: 0 0 0 0;
+          padding: 45px 0 0 0;
 
         &_tags {
           display: flex;

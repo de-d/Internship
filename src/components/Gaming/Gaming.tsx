@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import style from "./Gaming.module.scss";
 import { Sections } from "./types";
+import ImageWithMask from "../ImageWithMask/ImageWithMask";
 import Ticker from "../Ticker/Ticker";
 
 export default function GamingSection() {
@@ -21,7 +22,7 @@ export default function GamingSection() {
       <section className={style.gaming_section}>
         <div className={style.gaming_section__content}>
           <div className={style.gaming_section__img}>
-            <img className={style.gaming_section__img_img} src={dataItem?.img.url} alt="Изображение" />
+            <ImageWithMask imgSrc={dataItem?.img.url} maskShape={dataItem?.img.shape} />
             <img className={style.gaming_section__img_sticker} src="img/gaming/gaming-sticker.svg" alt="Изображение" />
           </div>
           <div className={style.gaming_section__container}>

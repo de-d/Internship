@@ -37,7 +37,7 @@
     right: 0px;
     width: 304px;
     height: 100%;
-    background: url('img/articles/article-mobbg-1.svg') no-repeat center;
+    background: url('/img/articles/article-mobbg-1.svg') no-repeat center;
     z-index: -1;
   }
 
@@ -48,7 +48,7 @@
     left: 0px;
     width: 304px;
     height: 100%;
-    background: url('img/articles/article-mobbg-2.svg') no-repeat center;
+    background: url('/img/articles/article-mobbg-2.svg') no-repeat center;
     z-index: -1;
   }
 
@@ -237,7 +237,7 @@
     content: '';
     width: 17px;
     height: 17px;
-    background-image: url('img/date-icon.svg');
+    background-image: url('/img/date-icon.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -246,7 +246,7 @@
     content: '';
     width: 17px;
     height: 17px;
-    background-image: url('img/time-icon.svg');
+    background-image: url('/img/time-icon.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -258,7 +258,6 @@
 }
 
 @media (min-width: 768px) {
-
   .articles_section {
     width: 100%;
     max-width: 768px;
@@ -272,7 +271,7 @@
       right: 0px;
       width: 768px;
       height: 100%;
-      background: url('img/articles/article-tabbg.svg') no-repeat center;
+      background: url('/img/articles/article-tabbg.svg') no-repeat center;
       z-index: -1;
     }
 
@@ -386,7 +385,7 @@
           content: '';
           width: 17px;
           height: 17px;
-          background-image: url('img/date-icon.svg');
+          background-image: url('/img/date-icon.svg');
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -395,7 +394,7 @@
           content: '';
           width: 17px;
           height: 17px;
-          background-image: url('img/time-icon.svg');
+          background-image: url('/img/time-icon.svg');
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -455,7 +454,7 @@
       right: 0px;
       width: 1440px;
       height: 100%;
-      background: url('img/articles/article-desbg.svg') no-repeat center;
+      background: url('/img/articles/article-desbg.svg') no-repeat center;
       z-index: -1;
     }
 
@@ -569,7 +568,7 @@
           content: '';
           width: 17px;
           height: 17px;
-          background-image: url('img/date-icon.svg');
+          background-image: url('/img/date-icon.svg');
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -578,7 +577,7 @@
           content: '';
           width: 17px;
           height: 17px;
-          background-image: url('img/time-icon.svg');
+          background-image: url('/img/time-icon.svg');
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;

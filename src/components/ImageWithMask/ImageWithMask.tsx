@@ -6,9 +6,5 @@ interface ImageWithMaskProps {
 }
 
 export default function ImageWithMask({ imgSrc, maskShape }: ImageWithMaskProps) {
-  return (
-    <div className={style.image_wrapper}>
-      <img className={`${style.image} ${style[maskShape || ""]}`} src={imgSrc} alt="image" />
-    </div>
-  );
+  return <img className={`${style.image} ${style[maskShape || ""]}`} src={imgSrc} alt="image" />;
 }

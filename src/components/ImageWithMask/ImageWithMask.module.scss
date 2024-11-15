@@ -40,6 +40,10 @@
   @include common-mask-styles('/img/articles/fifth-article-mask-1.svg', -15px 0px, 304px, 352px);
 }
 
+.scalloped-frame {
+  @include common-mask-styles('/img/webinars/avatar-mask.svg', center, 64px, 64px);
+}
+
 @media (min-width: 768px) {
   //gaming
   .arch {
@@ -92,4 +96,4 @@
   .corner-squared-rounded {
     @include common-mask-styles('/img/articles/fifth-article-mask-3.svg', center, 584px, 328px);
   }
-} 
+}

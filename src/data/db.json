@@ -228,7 +228,7 @@
         {
           "background": "#57acbc",
           "author": {
-            "img": "/img/proposals/authors/1.jpg",
+            "img": "img/webinars/first-card-avatar.jpg",
             "name": "Julia Alvarez",
             "position": "Programador, consultor"
           },
@@ -241,12 +241,12 @@
         {
           "background": "#57acbc",
           "author": {
-            "img": "/img/proposals/authors/1.jpg",
-            "name": "Julia Alvarez",
-            "position": "Programador, consultor"
+            "img": "img/webinars/second-card-avatar.jpg",
+            "name": "Diego Xochihuila",
+            "position": "Diseñadora, editora"
           },
-          "text": "Cómo iniciar el calendario de publicaciones de tu marca",
-          "tags": ["Próximamente", "Webinar"],
+          "text": "Cloud Computing: Qué es y cuáles son sus ventajas en la industria",
+          "tags": ["Próximamente", "Workshop"],
           "date_from": "31.05.2024",
           "date_to": "02.06.2024",
           "time": "19:00"
@@ -254,7 +254,7 @@
         {
           "background": "#ef9700",
           "author": {
-            "img": "/img/proposals/authors/2.jpg",
+            "img": "img/webinars/third-card-avatar.png",
             "name": "Consuela Zacatelco",
             "position": "Empresario graduado de la Universidad de Harvard"
           },

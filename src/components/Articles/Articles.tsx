@@ -25,7 +25,9 @@ export default function Articles() {
           </div>
         </div>
       </section>
-      <Ticker text={content?.content.ticker.text} color={content?.content.ticker.color} />
+      <div className={style.ticker}>
+        <Ticker text={content?.content.ticker.text} color={content?.content.ticker.color} />
+      </div>
     </>
   );
 }

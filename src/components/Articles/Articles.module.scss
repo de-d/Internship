@@ -445,7 +445,7 @@
     width: 100%;
     max-width: 1440px;
     padding-top: 0px;
-    padding-bottom: 170px;
+    padding-bottom: 155px;
 
     &::before {
       content: '';
@@ -631,5 +631,15 @@
       padding-top: 15px;
       font-size: 18px;
     }
+  }
+
+  .ticker {
+    transform: skewY(1deg);
+  }
+}
+
+@media (min-width: 1900px) {
+  .ticker {
+    transform: skewY(3deg);
   }
 }

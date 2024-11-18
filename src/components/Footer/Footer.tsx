@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FooterData, Contacts } from "./types";
 import useFetch from "../../hooks/useFetch";
 import style from "./Footer.module.scss";
@@ -5,6 +6,37 @@ import style from "./Footer.module.scss";
 export default function Footer() {
   const { data: footerData } = useFetch<FooterData>("http://localhost:3001/menu");
   const { data: contactsData } = useFetch<Contacts>("http://localhost:3001/contacts");
+  const [isSubmitted, setIsSubmitted] = useState(false); //не добавил окно с успешной отправкой т.к в макете его нет
+  const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
+
+  const validateEmail = (value: string) => {
+    const emailPattern = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    return emailPattern.test(value);
+  };
+
+  const handleBlur = () => {
+    if (email.trim() === "") {
+      setIsEmailValid(false);
+    } else {
+      setIsEmailValid(validateEmail(email));
+    }
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    setIsEmailValid(validateEmail(value));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setEmail("");
+      setIsSubmitted(false);
+    }, 2000);
+  };
 
   return (
     <footer className={style.footer}>
@@ -15,7 +47,6 @@ export default function Footer() {
             <img className={style.footer__logo_holon} src="img/footer/holon.jpg" alt="Изображение" />
           </div>
         </div>
-
         <div className={style.footer__social}>
           <img className={style.footer__social_img} src="img/footer/inst-icon.svg" alt="Instagram" />
           <img className={style.footer__social_img} src="img/footer/fbook-icon.svg" alt="Facebook" />
@@ -57,14 +88,20 @@ export default function Footer() {
             <p className={style.footer__contact_text}>{contactsData?.email}</p>
           </div>
         </div>
-
-        <form className={style.footer__form}>
-          <input className={style.footer__form_input} type="email" required placeholder={contactsData?.subscription["email-placeholder"]} />
-          <button className={style.footer__form_button} type="submit">
+        <form className={style.footer__form} onSubmit={handleSubmit} noValidate>
+          <input
+            className={`${style.footer__form_input} ${!isEmailValid && email ? style.invalid : ""} ${isEmailValid && email ? style.valid : ""}`}
+            type="email"
+            required
+            placeholder={contactsData?.subscription["email-placeholder"]}
+            value={email}
+            onChange={handleEmailChange}
+            onBlur={handleBlur}
+          />
+          <button className={style.footer__form_button} type="submit" disabled={!isEmailValid}>
             {contactsData?.subscription["submit-text"]}
           </button>
         </form>
-
         <div className={style.footer__privacy}>
           {contactsData?.links.map((item) => (
             <a key={item.label} className={style.footer__privacy_link} href={item.url}>

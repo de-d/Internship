@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 64px 0;
+    padding: 64px 0 66px 0;
 
     &_container {}
 
@@ -103,7 +103,7 @@
       flex-direction: column;
       gap: 16px;
       padding: 0;
-      margin-top: 25px;
+      margin-top: 23px;
       list-style: none;
     }
 
@@ -201,7 +201,6 @@
   &__privacy {
     display: flex;
     flex-direction: column;
-    padding-top: 3px;
     gap: 17px;
 
     &_link {
@@ -351,19 +350,12 @@
           }
         }
 
-        &_checkbox {
-          display: none;
-        }
-
-        &_open {
-          display: none;
-        }
-
-        &_close {
+        &_checkbox, &_open, &_close {
           display: none;
         }
 
         &_title {
+          cursor: default;
         }
 
         &_list {
@@ -551,4 +543,19 @@
         }
       }
     }
+}
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: black;
+
+    &__menu {
+      &_title {
+        color: #FCFAF9;
+      }
+
+      &_item {
+        color: #a8a7a7;
+      }
+    }
+  }
 }

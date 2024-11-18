@@ -281,3 +281,17 @@
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .header {
+        background-color: black;
+        color: white;
+
+        &__logo_img {
+            filter: invert(1);
+        }
+        &__search_img {
+            filter: invert(1);
+        }
+    }
+}

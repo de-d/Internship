@@ -208,6 +208,9 @@
   }
 
   &__input {
+    width: 256px;
+    height: 49px;
+    box-sizing: border-box;
     line-height: 160%;
     padding: 10px 24px;
     border-radius: 88px;
@@ -283,7 +286,7 @@
   .subscribe_section {
     width: 100%;
     margin: 0 auto;
-    margin-top: -50px;
+    margin-top: -30px;
     background-color: #F2F2F2;
 
     &__container {
@@ -291,7 +294,7 @@
       width: 520px;
       height: 498px;
       padding: 40px 24px;
-      margin: 79px 185px 109px 0;
+      margin: 36px 185px 109px 0;
       background-color: #57ACBC;
       border-radius: 37.5px;
 
@@ -356,7 +359,8 @@
     }
 
     &__input {
-      width: 230px;
+      width: 280px;
+
     }
 
     &__button {
@@ -388,7 +392,7 @@
         width: 416px;
         height: 517px;
         top: 0px;
-        left: 1000px;
+        left: 1005px;
         background-image: url('/img/subscribe/des-sub-img.svg');
       }
       &::after {
@@ -407,7 +411,7 @@
     }
 
     &__description {
-      width: 624px;
+      width: 590px;
     }
 
     &__form {
@@ -457,7 +461,7 @@
     }
 
     &__input {
-      width: 230px;
+      width: 280px;
       padding: 8px 24px;
     }
 

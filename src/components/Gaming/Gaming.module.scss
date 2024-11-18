@@ -471,3 +471,21 @@
   }
 
 }
+
+@media (prefers-color-scheme: dark) {
+  .gaming_section {
+    &::before {
+      filter: invert(1);
+    }
+
+    &__info {
+      &_text {
+        color: #FCFAF9;
+      }
+      &_date,
+      &_time {
+        color: #FCFAF9;
+      }
+    }
+  }
+}

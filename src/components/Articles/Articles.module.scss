@@ -643,3 +643,19 @@
     transform: skewY(3deg);
   }
 }
+@media (prefers-color-scheme: dark) {
+  .articles_section {
+    &::before,
+    &::after {
+      filter: invert(1);
+    }
+
+    &__text {
+      color: #FCFAF9;
+    }
+    &__date,
+    &__time {
+      color: #FCFAF9;
+    }
+  }
+}

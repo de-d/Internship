@@ -1,0 +1,99 @@
+.image {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+@mixin common-mask-styles($url, $position, $width, $height) {
+  width: $width;
+  height: $height;
+  object-position: $position;
+  mask-image: url($url);
+  -webkit-mask-image: url($url);
+  mask-size: 100%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+
+.arch {
+  @include common-mask-styles('/img/gaming/mask-gaming-3.svg', bottom, 304px, 352px);
+}
+
+.semi-squared-rounded {
+  @include common-mask-styles('/img/articles/first-article-mask-1.svg', center, 304px, 352px);
+}
+
+.semi-squared-cloud {
+  @include common-mask-styles('/img/articles/second-article-mask-1.svg', -50px 0px, 304px, 352px);
+}
+
+.cloud {
+  @include common-mask-styles('/img/articles/third-article-mask-1.svg', center, 304px, 352px);
+}
+
+.corner-squared-cloud {
+  @include common-mask-styles('/img/articles/fourth-article-mask-1.svg', center, 304px, 352px);
+}
+
+.corner-squared-rounded {
+  @include common-mask-styles('/img/articles/fifth-article-mask-1.svg', -15px 0px, 304px, 352px);
+}
+
+.scalloped-frame {
+  @include common-mask-styles('/img/webinars/avatar-mask.svg', center, 64px, 64px);
+}
+
+@media (min-width: 768px) {
+  //gaming
+  .arch {
+    @include common-mask-styles('/img/gaming/mask-gaming-2.svg', center, 704px, 320px);
+  }
+  //articles
+  .semi-squared-rounded {
+    @include common-mask-styles('/img/articles/first-article-mask-2.svg', center, 340px, 224px);
+  }
+
+  .semi-squared-cloud {
+    @include common-mask-styles('/img/articles/second-article-mask-2.svg', 0px 0px, 340px, 224px);
+  }
+
+  .cloud {
+    @include common-mask-styles('/img/articles/third-article-mask-2.svg', center, 704px, 320px);
+  }
+
+  .corner-squared-cloud {
+    @include common-mask-styles('/img/articles/fourth-article-mask-2.svg', center, 340px, 224px);
+  }
+
+  .corner-squared-rounded {
+    @include common-mask-styles('/img/articles/fifth-article-mask-2.svg', center, 340px, 224px);
+  }
+}
+
+@media (min-width: 1280px) {
+  //gaming
+  .arch {
+    @include common-mask-styles('/img/gaming/mask-gaming-3.svg', bottom, 480px, 560px);
+  }
+  //articles
+  .semi-squared-rounded {
+    @include common-mask-styles('/img/articles/first-article-mask-3.svg', center, 584px, 328px);
+  }
+
+  .semi-squared-cloud {
+    @include common-mask-styles('/img/articles/second-article-mask-3.svg', 0px 0px, 584px, 328px);
+  }
+
+  .cloud {
+    @include common-mask-styles('/img/articles/third-article-mask-3.svg', center, 1208px, 520px);
+  }
+
+  .corner-squared-cloud {
+    @include common-mask-styles('/img/articles/fourth-article-mask-3.svg', center, 584px, 328px);
+  }
+
+  .corner-squared-rounded {
+    @include common-mask-styles('/img/articles/fifth-article-mask-3.svg', center, 584px, 328px);
+  }
+}

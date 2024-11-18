@@ -3,6 +3,7 @@ import GamingSection from "./components/Gaming/Gaming";
 import Articles from "./components/Articles/Articles";
 import Webinars from "./components/Webinars/Webinars";
 import Subscribe from "./components/Subscribe/Subscribe";
+import Footer from "./components/Footer/Footer";
 
 export function App() {
   return (
@@ -12,6 +13,7 @@ export function App() {
       <Articles />
       <Webinars />
       <Subscribe />
+      <Footer />
     </>
   );
 }

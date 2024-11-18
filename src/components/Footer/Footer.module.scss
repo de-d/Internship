@@ -66,11 +66,11 @@
         display: flex;
       }
 
-      &:checked ~ .footer__menu_open {
+      &:checked ~ .footer__menu_title .footer__menu_open {
         display: none;
       }
 
-      &:checked ~ .footer__menu_close {
+      &:checked ~ .footer__menu_title .footer__menu_close {
         display: flex;
       }
     }

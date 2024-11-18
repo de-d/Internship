@@ -6,7 +6,6 @@ import style from "./Footer.module.scss";
 export default function Footer() {
   const { data: footerData } = useFetch<FooterData>("http://localhost:3001/menu");
   const { data: contactsData } = useFetch<Contacts>("http://localhost:3001/contacts");
-  const [isSubmitted, setIsSubmitted] = useState(false); //не добавил окно с успешной отправкой т.к в макете его нет
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
 
@@ -31,10 +30,8 @@ export default function Footer() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
     setTimeout(() => {
       setEmail("");
-      setIsSubmitted(false);
     }, 2000);
   };
 

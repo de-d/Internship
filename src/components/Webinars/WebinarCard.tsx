@@ -26,8 +26,7 @@ export default function WebinarCard({ item }: { item: ProposalItem }) {
         <div className={style.webinars_section__card_footer_date_and_time}>
           <div className={style.webinars_section__card_footer_date}>
             <p className={style.webinars_section__card_footer_date_text}>
-              {item.date_from} <br />
-              {item.date_to}
+              {item.date_from}, {item.date_to} de 2022
             </p>
           </div>
           <div className={style.webinars_section__card_footer_time}>

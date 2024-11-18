@@ -234,8 +234,8 @@
           },
           "text": "Cómo iniciar el calendario de publicaciones de tu marca",
           "tags": ["Próximamente", "Webinar"],
-          "date_from": "31.05.2024",
-          "date_to": "02.06.2024",
+          "date_from": "31 de maio",
+          "date_to": "01 e 02 de junho",
           "time": "19:00"
         },
         {
@@ -247,8 +247,8 @@
           },
           "text": "Cloud Computing: Qué es y cuáles son sus ventajas en la industria",
           "tags": ["Próximamente", "Workshop"],
-          "date_from": "31.05.2024",
-          "date_to": "02.06.2024",
+          "date_from": "30 e 31 de maio e 01",
+          "date_to": "02 e 03 de junho",
           "time": "19:00"
         },
         {
@@ -260,8 +260,8 @@
           },
           "text": "Ilustración Digital: 3 diferentes estilos de diseño",
           "tags": ["Próximamente", "Demonstração"],
-          "date_from": "01.06.2024",
-          "date_to": "02.06.2024",
+          "date_from": "01 e",
+          "date_to": "02 de junho",
           "time": "19:00"
         }
       ],

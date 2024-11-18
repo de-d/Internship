@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
 import { Subscription } from "./types";
 import Ticker from "../Ticker/Ticker";
 import style from "./Subscribe.module.scss";
 
 export default function Subscribe() {
-  const [subscription, setSubscription] = useState<Subscription | null>(null);
+  const { data: subscribeData } = useFetch<Subscription>("http://localhost:3001/sections");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/sections/")
-      .then((response) => response.json())
-      .then(setSubscription)
-      .catch((error) => console.error("Ошибка при загрузке данных:", error));
-  }, []);
 
   const validateEmail = (value: string) => {
     const emailPattern = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
@@ -50,8 +44,8 @@ export default function Subscribe() {
       <section className={style.subscribe_section}>
         <div className={style.subscribe_section__container}>
           <div className={style.subscribe_section__content}>
-            <h2 className={style.subscribe_section__title}>{subscription?.subscription.title}</h2>
-            <p className={style.subscribe_section__description}>{subscription?.subscription.text}</p>
+            <h2 className={style.subscribe_section__title}>{subscribeData?.subscription.title}</h2>
+            <p className={style.subscribe_section__description}>{subscribeData?.subscription.text}</p>
           </div>
           {!isSubmitted ? (
             <div id="form" className={style.subscribe_section__form}>
@@ -63,7 +57,7 @@ export default function Subscribe() {
                     }`}
                     type="email"
                     required
-                    placeholder={subscription?.subscription["email-placeholder"]}
+                    placeholder={subscribeData?.subscription["email-placeholder"]}
                     value={email}
                     onChange={handleEmailChange}
                     onBlur={handleBlur}
@@ -71,12 +65,12 @@ export default function Subscribe() {
                   {!isEmailValid && email && <p className={style.subscribe_section__form_error}>Formato de email inválido, verifique a ortografia</p>}
                 </div>
                 <button type="submit" id="submitBtn" className={style.subscribe_section__button} disabled={!isEmailValid || !isCheckboxChecked}>
-                  {subscription?.subscription["submit-text"]}
+                  {subscribeData?.subscription["submit-text"]}
                 </button>
               </form>
               <div className={style.subscribe_section__form_checkbox_container}>
                 <input className={style.subscribe_section__form_checkbox} type="checkbox" onChange={handleCheckboxChange} disabled={!isEmailValid} />
-                <label className={style.subscribe_section__form_label}>{subscription?.subscription["agreement-text"]}</label>
+                <label className={style.subscribe_section__form_label}>{subscribeData?.subscription["agreement-text"]}</label>
               </div>
             </div>
           ) : (
@@ -88,7 +82,7 @@ export default function Subscribe() {
         <div className={style.subscribe_section__img}></div>
       </section>
       <div className={style.ticker}>
-        <Ticker text={subscription?.subscription.ticker.text} color={subscription?.subscription.ticker.color} isWhite={true} />
+        <Ticker text={subscribeData?.subscription.ticker.text} color={subscribeData?.subscription.ticker.color} isWhite={true} />
       </div>
     </>
   );

@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react";
+import useFetch from "../../hooks/useFetch";
 import style from "./Gaming.module.scss";
 import { Sections } from "./types";
 import ImageWithMask from "../ImageWithMask/ImageWithMask";
 import Ticker from "../Ticker/Ticker";
 
 export default function GamingSection() {
-  const [data, setData] = useState<Sections | null>(null);
+  const { data: gamingData } = useFetch<Sections>("http://localhost:3001/sections");
 
-  useEffect(() => {
-    fetch("http://localhost:3001/sections")
-      .then((response) => response.json())
-      .then(setData)
-      .catch((error) => console.error("Ошибка при загрузке данных:", error));
-  }, []);
-
-  const dataItem = data?.main.items[0];
-  const allTags = data?.main.items.flatMap((item) => item.tags) || [];
+  const dataItem = gamingData?.main.items[0];
+  const allTags = gamingData?.main.items.flatMap((item) => item.tags) || [];
 
   return (
     <>
@@ -51,7 +44,7 @@ export default function GamingSection() {
           </div>
         </div>
       </section>
-      <Ticker text={data?.main.ticker.text} color={data?.main.ticker.color} />
+      <Ticker text={gamingData?.main.ticker.text} color={gamingData?.main.ticker.color} />
     </>
   );
 }

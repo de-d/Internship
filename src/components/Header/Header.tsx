@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
+import useFetch from "../../hooks/useFetch";
 
 interface MenuItem {
   label: string;
@@ -12,22 +12,15 @@ interface MenuData {
 }
 
 export function Header() {
-  const [data, setData] = useState<MenuData | null>(null);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/menu")
-      .then((response) => response.json())
-      .then(setData)
-      .catch((error) => console.error("Ошибка при загрузке данных:", error));
-  }, []);
+  const { data: headerData } = useFetch<MenuData>("http://localhost:3001/menu");
 
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
-        <img className={styles.header__logo_img} src={data?.logo} alt="Логотип" />
+        <img className={styles.header__logo_img} src={headerData?.logo} alt="Логотип" />
       </div>
       <nav className={styles.header__nav}>
-        {data?.header.map((item) => (
+        {headerData?.header.map((item) => (
           <a href={item.url} key={item.label} className={styles.header__nav_item}>
             {item.label}
           </a>

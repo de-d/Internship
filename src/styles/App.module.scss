@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(../assets/fonts/Nunito-Regular.ttf);
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}

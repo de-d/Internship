@@ -11,47 +11,78 @@
     height: 100vh;
   }
 
+
+  &__route {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    padding-bottom: 10px;
+
+    &__button {
+      width: 200px;
+      height: 50px;
+      @extend .button;
+    }
+  }
+
   &__header {
     width: 100%;
     padding-bottom: 20px;
   }
 
-  &__grid__4 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 415px;
-    height: 100%;
-    gap: 5px;
-  }
-
-  &__grid__6 {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 625px;
-    gap: 5px;
-  }
-
-  &__grid__8 {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 650px;
-    gap: 5px;
-  }
-
   &__button {
     width: 200px;
     height: 50px;
-    border-radius: 20px;
     margin-top: 20px;
-    cursor: pointer;
-    background-color: #4caf50;
-    border: none;
+    @extend .button;
+  }
+}
 
-    &:hover {
-      background-color: #45a049;
-    }
+.grid4 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 415px;
+  height: 100%;
+  gap: 5px;
+}
+.grid6 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 625px;
+  gap: 5px;
+}
+.grid8 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1465px;
+  gap: 5px;
+}
+
+.button {
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  font-weight: bold;
+  background-color: #4caf50;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #56c85c;
+  }
+
+  &__active {
+    background-color: #357a38;
+    color: #fff;
+  }
+  &:active {
+    background-color: #357a38;
+    color: #fff;
   }
 }
 

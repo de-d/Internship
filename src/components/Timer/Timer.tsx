@@ -3,30 +3,22 @@ import { AppContext } from "../../context/AppContext";
 import style from "../Header/Header.module.scss";
 
 interface TimerProps {
-  level: string;
   onTimeOver: () => void;
 }
 
-export default function Timer({ level, onTimeOver }: TimerProps) {
+export default function Timer({ onTimeOver }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState<number>(0);
-  const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
-  const [timerEnd, setTimerEnd] = useState<boolean>(false);
-  const appContext = useContext(AppContext);
-  const { gridSize, isStartedTimer } = appContext!;
+  const { time, isGameStarted, isGameOver, setStartGame, setIsStartedTimer } = useContext(AppContext)!;
 
   useEffect(() => {
-    if (!isStartedTimer || timerEnd) return;
+    setTimeLeft(time);
+  }, [time]);
 
-    const levelTimes: Record<string, Record<number, number>> = {
-      easy: { 4: 60, 6: 180 },
-      medium: { 4: 45, 6: 120 },
-      hard: { 4: 30, 6: 90 },
-    };
-
-    const selectedTime = levelTimes[level]?.[gridSize] || 120;
-
-    setTimeLeft(selectedTime);
-    setIsTimerRunning(true);
+  useEffect(() => {
+    if (!isGameStarted || isGameOver) {
+      setTimeLeft(time);
+      return;
+    }
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -34,15 +26,22 @@ export default function Timer({ level, onTimeOver }: TimerProps) {
           return prev - 1;
         } else {
           clearInterval(timer);
-          setTimerEnd(true);
+          setStartGame(false);
+          setIsStartedTimer(false);
           onTimeOver();
           return 0;
         }
       });
+
+      if (isGameOver) {
+        clearInterval(timer);
+      }
     }, 1000);
 
-    return () => clearInterval(timer);
-  }, [isStartedTimer, level, gridSize, onTimeOver, isTimerRunning, timerEnd]);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [isGameStarted, isGameOver, time, onTimeOver, setStartGame, setIsStartedTimer]);
 
   return (
     <div>

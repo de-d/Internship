@@ -5,7 +5,7 @@ import style from "./Header.module.scss";
 
 export default function Header() {
   const appContext = useContext(AppContext);
-  const { gamesPlayed, maxScore, currentScore, errors, progress, level, resetSessionData, setIsGameOver } = appContext!;
+  const { maxScore, currentScore, gamesPlayed, level, time, errors, progress, setIsGameOver, setStartGame, setTime } = appContext!;
 
   return (
     <div className={style.header}>
@@ -27,10 +27,10 @@ export default function Header() {
         <div className={style.header__timer_level}>
           <span>{level}</span>
           <Timer
-            level={level}
             onTimeOver={() => {
-              resetSessionData();
               setIsGameOver(true);
+              setStartGame(false);
+              setTime(time);
             }}
           />
         </div>

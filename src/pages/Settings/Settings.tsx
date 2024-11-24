@@ -7,7 +7,7 @@ export default function Settings() {
   const navigate = useNavigate();
   const appContext = useContext(AppContext);
 
-  const { time, nickname, gridSize, cardSets, sampleOrUpload, setSampleOrUpload } = appContext!;
+  const { nickname, gridSize, cardSets, sampleOrUpload, setSampleOrUpload } = appContext!;
 
   const [isEditing, setIsEditing] = useState(false);
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);

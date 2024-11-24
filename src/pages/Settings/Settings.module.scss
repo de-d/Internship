@@ -1,0 +1,330 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 530px;
+    height: 100vh;
+  }
+
+  &__route {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    padding-bottom: 10px;
+
+    &__button {
+      @extend .button;
+      width: 200px;
+      height: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: 10px;
+    border: 2px solid #4caf50;
+    border-radius: 20px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__name {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+
+      &__title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      &__span {
+        border-bottom: 2px solid #4caf50;
+      }
+      &__button {
+        width: 20px;
+        height: 20px;
+        border: none;
+        background: url("img/edit-name.svg") no-repeat center center / contain;
+        background-color: #56c85c;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      &__input {
+        border: none;
+        border-bottom: 2px solid #4caf50;
+        border-radius: 5px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    &__level,
+    &__grid_size,
+    &__errors,
+    &__time,
+    &__sample_img,
+    &__image_upload,
+    &__theme,
+    &__sample_or_upload {
+      &__title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      &__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        padding-top: 5px;
+
+        &__button {
+          @extend .button;
+        }
+      }
+    }
+
+    &__sample_img {
+      &__images {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        padding-top: 5px;
+
+        > *:nth-child(1) {
+
+          .settings__content__sample_img__images__img {
+            padding-bottom: 10px;
+          }
+        }
+        > *:nth-child(3) {
+
+          .settings__content__sample_img__images__img {
+            padding-bottom: 8px;
+          }
+        }
+        > *:nth-child(4) {
+
+          .settings__content__sample_img__images__img {
+            margin-bottom: 17px;
+          }
+        }
+        > *:nth-child(5) {
+          .settings__content__sample_img__images__img {
+            padding-bottom: 10px;
+          }
+        }
+        > *:nth-child(6) {
+
+          .settings__content__sample_img__images__img {
+            padding-bottom: 15px;
+          }
+        }
+
+        &__button {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          align-items: center;
+          @extend .button;
+        }
+
+        &__img {
+          border-radius: 20px;
+        }
+        &__span {
+          font-size: 14px;
+          font-weight: bold;
+
+          &::first-letter {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    &__image_upload {
+      &__input_wrapper {
+        position: relative;
+        display: inline-block;
+      }
+      &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1;
+        cursor: pointer;
+      }
+      &__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 20px;
+        padding: 5px;
+        margin-left: 70px;
+        background-color: #4caf50;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #56c85c;
+        }
+
+        &:active {
+          background-color: #357a38;
+        }
+      }
+
+      &__preview {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 200px;
+        padding: 5px;
+        margin: 10px 0;
+        gap: 10px;
+        border: 1px solid #4caf50;
+        border-radius: 5px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
+          padding: 15px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #4caf50;
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: #f1f1f1;
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: #388e3c;
+        }
+
+        &::-webkit-scrollbar {
+          height: 50%;
+        }
+
+        &::-webkit-scrollbar {
+          position: relative;
+          left: 5px;
+        }
+
+        &__item {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          width: 100px;
+          height: 100px;
+
+          &__img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            overflow: hidden;
+          }
+
+          &__delete_button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: url("img/delete-icon.svg") no-repeat center center / contain;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+
+            &:hover {
+              opacity: 0.8;
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+      &__errors {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+      &__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        padding-top: 5px;
+      }
+      &__button {
+        @extend .button;
+      }
+    }
+  }
+  &__error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+
+.button {
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  background-color: #4caf50;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #56c85c;
+  }
+
+  &__active {
+    background-color: #357a38;
+    color: #fff;
+  }
+  &:active {
+    background-color: #357a38;
+    color: #fff;
+  }
+}
+.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #0056b3;
+  font-weight: bold;
+}
+.active_cards {
+  color: #0056b3;
+  font-weight: bold;
+}

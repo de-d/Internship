@@ -3,33 +3,67 @@ import { AppContext } from "../../context/AppContext";
 import Card from "../../components/Card/Card";
 import styles from "./PlayingField.module.scss";
 
-const generateRandomSeed = () => Math.random().toString(36).substring(2, 15);
+interface CardType {
+  id: string;
+  image: string;
+  isFlipped: boolean;
+  isMatched: boolean;
+}
 
 function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
-  const { currentScore, errors, gridSize, isGameOver, setCurrentScore, setErrors, setProgress, setIsGameOver, incrementGamesPlayed } =
-    useContext(AppContext)!;
+  const {
+    cardSets,
+    gridSize,
+    level,
+    sampleOrUpload,
+    currentScore,
+    errors,
+    errorLimit,
+    maxScore,
+    time,
+    gamesPlayed,
+    isGameOver,
+    setCurrentScore,
+    setErrors,
+    setProgress,
+    setStartGame,
+    setIsGameOver,
+    setIsStartedTimer,
+    setMaxScore,
+    setTime,
+    setGamesPlayed,
+  } = useContext(AppContext)!;
+
+  const loadUserImages = () => JSON.parse(localStorage.getItem("userImages") || "[]");
 
   const createCards = () => {
-    const cardsArray = [];
-    const totalPairs = gridSize === 4 ? 8 : gridSize === 6 ? 18 : 0;
-    for (let i = 0; i < totalPairs; i++) {
-      const seed = generateRandomSeed();
-      cardsArray.push({
-        id: `${i}-0`,
-        image: `https://api.dicebear.com/6.x/notionists/svg?seed=${seed}`,
-        isFlipped: false,
-        isMatched: false,
-      });
-    }
+    const localStorageKey = `cards_${cardSets}`;
+    const savedCards = localStorage.getItem(localStorageKey);
+    if (savedCards) return JSON.parse(savedCards);
+
+    const totalPairs = gridSize === 4 ? 8 : gridSize === 6 ? 18 : 42;
+    const userImages = loadUserImages();
+    const isEnoughImages = sampleOrUpload === "upload" && userImages.length >= totalPairs;
+
+    const cardsArray: CardType[] = Array.from({ length: totalPairs }, (_, i) => ({
+      id: `${i}-0`,
+      image: isEnoughImages
+        ? userImages[i % userImages.length]
+        : `https://api.dicebear.com/6.x/${cardSets}/svg?seed=${Math.random().toString(36).substring(2, 15)}`,
+      isFlipped: false,
+      isMatched: false,
+    }));
+
+    localStorage.setItem(localStorageKey, JSON.stringify(cardsArray));
     return cardsArray;
   };
 
-  const [cards, setCards] = useState(createCards);
+  const [cards, setCards] = useState<CardType[]>(createCards);
   const [flippedCards, setFlippedCards] = useState<string[]>([]);
   const [previouslyFlippedPairs, setPreviouslyFlippedPairs] = useState<string[][]>([]);
   const [isChecking, setIsChecking] = useState(false);
 
-  const shuffleCards = (cardsArray: { id: string; image: string; isFlipped: boolean; isMatched: boolean }[]) => {
+  const shuffleCards = (cardsArray: CardType[]) => {
     const doubledCards = [...cardsArray, ...cardsArray];
 
     const shuffled = doubledCards.map((card, index) => ({
@@ -37,16 +71,21 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
       id: `${card.id.split("-")[0]}-${index}`,
     }));
 
-    return shuffled.sort(() => Math.random() - 0.5);
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
   };
 
   useEffect(() => {
-    setCards(shuffleCards(createCards()));
-  }, [gridSize]);
+    const localStorageKey = `cards_${cardSets}`;
 
-  const checkGameOver = (cardsArray: { isMatched: boolean }[]) => {
-    return cardsArray.every((card) => card.isMatched);
-  };
+    localStorage.removeItem(localStorageKey);
+
+    setCards(shuffleCards(createCards()));
+  }, [gridSize, cardSets]);
 
   const updateProgress = (matchedPairs: number) => {
     const totalPairs = cards.length / 2;
@@ -54,12 +93,18 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
   };
 
   useEffect(() => {
-    if (checkGameOver(cards)) {
+    if (errorLimit === errors || cards.every((card) => card.isMatched)) {
       setTimeout(() => {
         setIsGameOver(true);
-      }, 1000);
+        setIsStartedTimer(false);
+        setStartGame(false);
+      });
     }
-  }, [cards]);
+  }, [cards, errorLimit, errors, setStartGame, setIsGameOver, setIsStartedTimer]);
+
+  const isRepeatAttempt = (pair: string[]) => {
+    return previouslyFlippedPairs.some((prevPair) => prevPair[0] === pair[0] && prevPair[1] === pair[1]);
+  };
 
   const handleCardClick = (id: string) => {
     if (!isGameStarted || flippedCards.length === 2 || isChecking) return;
@@ -69,6 +114,13 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
 
       const newFlippedCards = updatedCards.filter((card) => card.isFlipped && !card.isMatched);
       setFlippedCards(newFlippedCards.map((card) => card.id));
+
+      const updateScore = (score: number) => {
+        setCurrentScore(score);
+        if (score > maxScore) {
+          setMaxScore(score);
+        }
+      };
 
       if (newFlippedCards.length === 2) {
         const [card1, card2] = newFlippedCards;
@@ -98,7 +150,7 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
             setIsChecking(false);
 
             const matchedPairs = cards.filter((card) => card.isMatched).length / 2 + 1;
-            setCurrentScore(currentScore + 5);
+            updateScore(currentScore + { Easy: 5, Medium: 7, Hard: 10, "No Way": 15, Custom: 5 }[level]!);
             updateProgress(matchedPairs);
           }, 0);
         }
@@ -108,42 +160,44 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
     });
   };
 
-  const isRepeatAttempt = (pair: string[]) => {
-    return previouslyFlippedPairs.some((prevPair) => prevPair[0] === pair[0] && prevPair[1] === pair[1]);
-  };
-
   const resetGame = () => {
-    setCards(shuffleCards(createCards()));
-    setIsGameOver(false);
-    setPreviouslyFlippedPairs([]);
-    setFlippedCards([]);
-    setProgress(0);
-    setCurrentScore(0);
-    setErrors(0);
-    incrementGamesPlayed();
+    setTimeout(() => {
+      localStorage.removeItem("cards");
+      setCards(shuffleCards(createCards()));
+      setIsGameOver(false);
+      setPreviouslyFlippedPairs([]);
+      setFlippedCards([]);
+      setProgress(0);
+      setCurrentScore(0);
+      setTime(time);
+      setStartGame(false);
+      setIsStartedTimer(false);
+      setGamesPlayed(gamesPlayed + 1);
+
+      if (isGameOver) {
+        setErrors(0);
+      }
+    }, 300);
   };
 
   return (
     <div className={styles.playingfield}>
-      <div className={gridSize === 4 ? styles.playingfield__grid__4 : styles.playingfield__grid__6}>
+      <div className={gridSize === 4 ? styles.grid4 : gridSize === 6 ? styles.grid6 : styles.grid8}>
         {cards.map((card) => (
           <Card key={card.id} id={card.id} image={card.image} isFlipped={card.isFlipped} isMatched={card.isMatched} onClick={handleCardClick} />
         ))}
       </div>
 
-      {errors === 5 && (
-        <div className={styles.modal}>
-          <div className={styles.modal__content}>
-            <h2>Вы проиграли, у вас закончились попытки</h2>
-            <button onClick={resetGame}>Начать заново</button>
-          </div>
-        </div>
-      )}
-
       {isGameOver && (
         <div className={styles.modal}>
           <div className={styles.modal__content}>
-            <h2>{cards.every((card) => card.isMatched) ? "Поздравляем, вы угадали все пары" : "Вы проиграли, не успели угадать все пары"}</h2>
+            <h2>
+              {errorLimit === errors
+                ? "Вы проиграли, у вас закончились попытки"
+                : cards.every((card) => card.isMatched)
+                ? "Поздравляем, вы угадали все пары"
+                : "Вы проиграли, не успели угадать все пары"}
+            </h2>
             <button onClick={resetGame}>Начать заново</button>
           </div>
         </div>

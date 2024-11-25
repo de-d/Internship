@@ -23,7 +23,9 @@ export default function Timer({ onTimeOver }: TimerProps) {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev > 0) {
-          return prev - 1;
+          const newTime = prev - 1;
+          sessionStorage.setItem("gameTimeLeft", newTime.toString());
+          return newTime;
         } else {
           clearInterval(timer);
           setStartGame(false);

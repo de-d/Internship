@@ -59,7 +59,7 @@
         width: 20px;
         height: 20px;
         border: none;
-        background: url("img/edit-name.svg") no-repeat center center / contain;
+        background: url("/img/edit-name.svg") no-repeat center center / contain;
         background-color: #56c85c;
         border-radius: 5px;
         cursor: pointer;
@@ -262,7 +262,7 @@
             width: 30px;
             height: 30px;
             border: none;
-            background: url("img/delete-icon.svg") no-repeat center center / contain;
+            background: url("/img/delete-icon.svg") no-repeat center center / contain;
             cursor: pointer;
             transition: transform 0.3s ease, opacity 0.3s ease;
 

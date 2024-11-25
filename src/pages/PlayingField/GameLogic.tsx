@@ -23,6 +23,7 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
     time,
     gamesPlayed,
     isGameOver,
+    theme,
     setCurrentScore,
     setErrors,
     setProgress,
@@ -160,7 +161,25 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
     });
   };
 
+  const saveGameResults = () => {
+    const time = sessionStorage.getItem("gameTimeLeft") || "0";
+    const gameResults = {
+      date: new Date().toLocaleString(),
+      level: level,
+      time: time,
+      errors: errors,
+      score: currentScore,
+    };
+
+    const previousResults = JSON.parse(sessionStorage.getItem("gameResults") || "[]");
+    previousResults.push(gameResults);
+
+    sessionStorage.setItem("gameResults", JSON.stringify(previousResults));
+  };
+
   const resetGame = () => {
+    saveGameResults();
+
     setTimeout(() => {
       localStorage.removeItem("cards");
       setCards(shuffleCards(createCards()));
@@ -189,13 +208,13 @@ function GameLogic({ isGameStarted }: { isGameStarted: boolean }) {
       </div>
 
       {isGameOver && (
-        <div className={styles.modal}>
+        <div className={`${styles.modal} ${theme === "Dark" ? styles.modal__darkMode : ""}`}>
           <div className={styles.modal__content}>
             <h2>
               {errorLimit === errors
                 ? "Вы проиграли, у вас закончились попытки"
                 : cards.every((card) => card.isMatched)
-                ? "Поздравляем, вы угадали все пары"
+                ? `Поздравляем, вы угадали все пары! Ваш счёт: ${currentScore}`
                 : "Вы проиграли, не успели угадать все пары"}
             </h2>
             <button onClick={resetGame}>Начать заново</button>

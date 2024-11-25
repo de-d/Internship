@@ -202,21 +202,6 @@ export default function Settings() {
 
   const handleThemeChange = (selectedTheme: string) => {
     appContext?.setTheme(selectedTheme);
-
-    switch (selectedTheme) {
-      case "Light":
-        document.body.style.backgroundColor = "#fff";
-        document.body.style.color = "#000";
-        break;
-
-      case "Dark":
-        document.body.style.backgroundColor = "#000";
-        document.body.style.color = "#fff";
-        break;
-
-      default:
-        console.warn("Unknown theme:", selectedTheme);
-    }
   };
 
   return (

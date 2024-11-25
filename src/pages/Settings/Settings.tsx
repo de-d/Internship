@@ -181,7 +181,7 @@ export default function Settings() {
     const newImages = uploadedImages.filter((img) => !existingImages.includes(img));
 
     if (newImages.length === 0) {
-      updateError(`Новые изображения нет, все уже добавлены`);
+      updateError(`Новых изображений нет, все уже добавлены`);
     }
 
     const allImages = [...existingImages, ...newImages];

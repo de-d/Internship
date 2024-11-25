@@ -7,6 +7,17 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+.light-theme {
+  background-color: white;
+  color: black;
+}
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+
 .app {
   display: flex;
   flex-direction: column;

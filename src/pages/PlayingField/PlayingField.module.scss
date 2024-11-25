@@ -1,0 +1,128 @@
+.playingfield {
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+
+  &__route {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    padding-bottom: 10px;
+
+    &__button {
+      width: 200px;
+      height: 50px;
+      @extend .button;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  &__button {
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+    @extend .button;
+  }
+}
+
+.grid4 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 415px;
+  height: 100%;
+  gap: 5px;
+}
+.grid6 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 625px;
+  gap: 5px;
+}
+.grid8 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1465px;
+  gap: 5px;
+}
+
+.button {
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  font-weight: bold;
+  background-color: #4caf50;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #56c85c;
+  }
+
+  &__active {
+    background-color: #357a38;
+    color: #fff;
+  }
+  &:active {
+    background-color: #357a38;
+    color: #fff;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  &__content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #4caf50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+      background: #45a049;
+    }
+  }
+
+  &__darkMode {
+    h2 {
+      color: #000000;
+    }
+  }
+}
+
